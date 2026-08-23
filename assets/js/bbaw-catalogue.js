@@ -38,9 +38,13 @@ function addRow(record) {
   const english = record.translation_columns.english;
   const englishCell = row.appendChild(document.createElement("td"));
   if (english) {
-    englishCell.appendChild(node("span", "chip full", "listed"));
+    const chip = node("span", "chip full", "listed");
+    chip.title = "BBAW's catalogue lists at least one English translation for this work.";
+    englishCell.appendChild(chip);
   } else {
-    englishCell.appendChild(node("span", "chip unknown", "column empty"));
+    const chip = node("span", "chip unknown", "no entry");
+    chip.title = "BBAW's English column has no entry for this work — which is not proof that no translation exists.";
+    englishCell.appendChild(chip);
   }
   row.appendChild(node("td", "bbaw-other", otherTranslations(record) || "—"));
   const pergamapCell = row.appendChild(document.createElement("td"));
