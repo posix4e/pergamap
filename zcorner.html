@@ -36,14 +36,14 @@
 
   <h2>The tour</h2>
 
-  <h3>1 · The atlas <a class="crumb" href="library.html">corpus →</a></h3>
+  <h3>1 · The library <a class="crumb" href="library.html">library →</a></h3>
   <p>Every work we know of, with the language it survives in and whether an English translation exists. The important column is not the status but the <em>confidence</em>: each row records whether a claim was checked, merely recalled, or never looked at. We also keep a local copy of the <a href="library.html#bbaw">BBAW/CMG translation catalogue</a> — 114 records — because that is the authority we check against.</p>
   <p class="crumb">Why this matters, and the cautionary tale: we once listed the sixteen books of the pulse treatises as untranslated. They aren't. Johnston and Papavramidou published a translation in 2024, the BBAW catalogue lists it, and we had simply never looked. It was removed from our ballot. More recently a check turned up a complete English version of <em>On the Differences of Fevers</em> in a 1928 Edinburgh thesis — which the BBAW catalogue does <em>not</em> list, because it only records published work. Both errors ran in the same direction: claiming something needs doing that had already been done.</p>
 
   <h3>2 · The witnesses <a class="crumb" href="library.html#witnesses">witnesses →</a></h3>
   <p>Thirty-five Galen-related Arabic files from the Digital Corpus for Graeco-Arabic Studies, held locally with checksums: seventeen translations (one the undivided twin of the two-part Aphorisms commentary), sixteen Alexandrian summaries, and two catalogues — including Ḥunayn's <em>Risāla</em>, his own account of what he translated. More on that below.</p>
 
-  <h3>3 · The text map <a class="crumb" href="transmission.html">transmission →</a></h3>
+  <h3>3 · The transmission map <a class="crumb" href="transmission.html">transmission →</a></h3>
   <p>How each work reaches us: Greek manuscripts, Arabic versions, and the Hebrew, Latin and modern branches beyond. The Hebrew side is thin and unverified, and we know it.</p>
 
   <h3>4 · How a translation is published <a class="crumb" href="translations/chunk.html?id=cml-1-1">a packet →</a></h3>
@@ -57,7 +57,7 @@
   <p>Every claim on the site is a file in a public repository. Corrections arrive as pull requests, are checked automatically, and go live on merge. Peter's two sentences are a diff anyone can read or revert. <strong>You will never need to touch any of this</strong> — tell us in prose and we'll encode it. Your attention should go on judgement, not plumbing.</p>
 
   <h2>The work</h2>
-  <p>Galen's commentary on the <em>Aphorisms</em> survives in Greek and in Ḥunayn's Arabic, both marking numbered lemmata. The arithmetic we can do says this much: the Arabic carries numbered lemmata 1–406 without a gap, and the Greek digitisation we read numbers 406 lemmata of its own. The project's <a href="https://github.com/posix4e/pergamap/blob/main/data/alignments/tlg092.json">alignment record</a> deliberately stops short of claiming the two numbering systems correspond — that claim is exactly what a machine cannot make and you can. Whether number 200 in one tradition is number 200 in the other is the question of this session.</p>
+  <p>Galen's commentary on the <em>Aphorisms</em> survives in Greek and in Ḥunayn's Arabic, both marking numbered lemmata. The arithmetic is now measured and on the record: <strong>both digitisations mark numbered lemmata 1–406, no gaps, identical sets</strong> — the <a href="https://github.com/posix4e/pergamap/blob/main/data/alignments/tlg092.json">alignment record</a> says so and says how it was checked. What the record deliberately does not claim is that number 200 in one tradition is the same <em>text</em> as number 200 in the other. That is a claim only a reader of both languages can make, and it is the question of this session.</p>
   <p>Seven loci below, chosen rather than sampled. Brief answers are the right ones, and “looks fine” is a complete answer.</p>
 
   <section class="locus">
@@ -124,9 +124,37 @@
     <p class="ask"><b>Same aphorism?</b> &nbsp;·&nbsp; <b>If they differ:</b> does the Arabic point to a different Greek reading (a <i>variant</i>), or is it one way of taking the Greek we have (a <i>construal</i>)?</p>
   </section>
 
+
+  <section class="locus">
+    <h3>The interesting pair: lemma 405</h3>
+    <p class="crumb">Found by screening all 399 comparable lemma pairs for length anomalies; this is the largest, at 3.3× the median ratio.</p>
+    <div class="pair">
+      <div class="grc" lang="grc">Ἐπὶ αἵματος ἐμέτῳ φθόη καὶ τοῦ πύου κάθαρσις ἄνω.</div>
+      <div class="ara" lang="ar" dir="rtl">ثمّ قيل بعد هذا: ومن قيء الدم الفساد وخروج المدّة من فوق، ومن الفساد النزلة من الرأس، ومن النزلة الاختلاف، ومن الاختلاف احتباس القذف من فوق، ومن ذلك الاحتباس الموت.</div>
+    </div>
+    <p>The printed Greek is a single link: after vomiting of blood, consumption and a purging of pus upward. The Arabic gives a chain of five — vomiting of blood, corruption, catarrh from the head, diarrhoea, retention of the expectoration, death — and opens not with the usual <span lang="ar" dir="rtl">قال أبقراط</span> but with <span lang="ar" dir="rtl">ثمّ قيل بعد هذا</span>, “then it is said after this.” More links than the Greek has is not a translator's habit of fullness; it looks like a different text.</p>
+    <p class="ask"><b>The question that matters:</b> does the Arabic imply a Greek exemplar carrying the fuller chain — a <i>variant</i> — or is Ḥunayn supplying the sequel from the neighbouring aphorisms, a <i>construal</i> stretched to its limit? &nbsp;<a href="https://github.com/posix4e/pergamap/issues/new?title=Reading%3A+Aphorisms+lemma+405+%E2%80%94+variant+or+construal%3F&amp;labels=zcorner">Record your reading →</a></p>
+  </section>
+
+  <section class="locus">
+    <h3>The control: lemma 117</h3>
+    <div class="pair">
+      <div class="grc" lang="grc">Τοὺς δὲ δυσεμέας καὶ μέσας εὐσάρκους κάτω, ὑποστελλομένους θέρος.</div>
+      <div class="ara" lang="ar" dir="rtl">قال أبقرلط: فأمّا من كان يعسر عليه القيء وكان من حسن اللحم على حال متوسّطة فاجعل استفراغك إيّاه بالدواء من أسفل وتوقّ أن تفعل ذلك في الصيف.</div>
+    </div>
+    <p>The same screen catches this one at 2.1× — and here the doubling is plainly the translator at work: the telegraphic Greek (hard-to-vomit patients, moderately fleshy, purge downward, avoid in summer) is unfolded into full clinical instruction with nothing added. Same translator, same book, and a divergence of an entirely different kind from 405. Across the whole commentary the median Arabic-to-Greek length ratio is 0.94, but the tails are one-sided: twenty-nine lemmata run past 1.4×, only nine fall under 0.6×. Ḥunayn expands; the question is whether length screening like this is a defensible way to hunt candidate variants at scale, or a net that mostly catches his prose habits.</p>
+    <p class="ask"><b>Two questions:</b> is 117 as innocent as it looks — and is the screening method sound? &nbsp;<a href="https://github.com/posix4e/pergamap/issues/new?title=Reading%3A+Aphorisms+lemma+117%2C+and+the+length-screen+method&amp;labels=zcorner">Record your reading →</a></p>
+  </section>
   <section class="locus">
     <h3>Afterwards: the Risāla</h3>
-    <p>Our copy of Ḥunayn's <em>Risāla</em> is divided into <strong>130 sections</strong>, one per work, in which he says what he translated, into Syriac or Arabic, for whom, and — the part that bears directly on the question above — what Greek manuscripts he could find and what state they were in. Nobody has turned that into structured data. If it can be done, it becomes a map of the entire Arabic Galen, and it is the piece of work we would most like your help with. Worth looking at together to see whether it's tractable.</p>
+    <p>Our copy of Ḥunayn's <em>Risāla</em> divides into <strong>130 sections</strong>, one per work: what he translated, into Syriac or Arabic, for whom, and what Greek manuscripts he could find and in what state. Sections average 394 Arabic characters; <strong>§20 runs to 2,975 — seven and a half times the mean</strong> — and its first line names its subject:</p>
+    <p class="ara" lang="ar" dir="rtl">(ك) كتابه في حيلة البرء. هذا الكتاب جعله في أربع عشرة مقالة وغرضه فيه أن يصف كيف يداوى كلّ واحد من الأمراض بطريق القياس ويقتصر فيه على الأعراض العامّيّة التي ينبغي أن يقصد قصدها في ذلك فيستخرج منها ما ينبغي أن يداوى به كلّ مرض من الأمراض ويضرب لذلك مثالات يسير…</p>
+    <p>— “his book on the Method of Healing,” <span lang="ar" dir="rtl">حيلة البرء</span>, in fourteen books: Galen's largest therapeutic work, and famously the one whose translation history Ḥunayn recounts at length. So the length signal seems to mean something: he wrote most where the transmission gave him most trouble. If that holds across all 130 sections, section length becomes a crude ranking of where the Greek tradition was already unstable in the ninth century — and turning the <em>Risāla</em> into structured data becomes a map of the entire Arabic Galen. That is the piece of work we would most like your help with, and the first question is simply whether our reading of §20 is right. &nbsp;<a href="https://github.com/posix4e/pergamap/issues/new?title=Risala+%C2%A720%3A+is+our+reading+right%2C+and+does+length+track+transmission+trouble%3F&amp;labels=zcorner">Record your reading →</a></p>
+  </section>
+
+  <section class="locus">
+    <h3>Further down the queue</h3>
+    <p>Kept short here; the <a href="https://github.com/posix4e/pergamap/blob/main/zcorner-queue.md">running queue</a> has the detail. In rough order: whether a Jawāmiʿ epitome carries any textual weight (<em>On Crises</em> sits on the ballot with only an epitome behind it); what the six translation-plus-epitome pairs reveal about what Alexandria cut; whether you read Hebrew, which decides who takes that branch of the transmission map; and the numeral problem — the drug books carry a quantity mark every fourteen words, quantities are what manuscripts corrupt silently, and a version that spells its numbers as words may there outrank the Greek. None of this is for the first session; it is where the road goes.</p>
   </section>
 
   <section class="locus">
