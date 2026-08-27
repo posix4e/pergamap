@@ -3722,7 +3722,9 @@
   }
  ],
  "lemmata": {
+  "greek_count": 406,
+  "numbering_agrees": true,
   "arabic_numbered": 406,
-  "note": "Hippocratic lemma numbers are marked in the Arabic only. The Greek carries no corresponding markers in this digitisation, so lemma-level alignment is not derivable here and is not claimed."
+  "note": "Both digitisations mark numbered Hippocratic lemmata. Where numbering_agrees is true the two carry identical lemma-number sets; number-to-number identity of the underlying text is a separate claim, to be tested by collation rather than asserted from markup."
  }
 }

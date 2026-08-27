@@ -18,7 +18,7 @@ The schema-v2 catalogue is explicitly marked `preliminary`. Every entry carries 
 
 The translation-status data is a living draft. If you find an error, [open an issue](https://github.com/posix4e/pergamap/issues) with your source — that's the project working as intended. Structured citations are preserved even when an older record has only a display label rather than complete bibliographic fields.
 
-The [BBAW/CMG catalogue browser](https://pergamap.com/bbaw-catalogue) loads a local metadata index refreshed weekly from the authoritative catalogue. The import records BBAW record numbers, titles, Kühn references, language-column presence, retrieval date, and source checksum; it does not republish BBAW's bibliographic strings or automatically change Pergamap's editorial status fields. A curated crosswalk connects the two catalogues, and CI requires every disagreement about English coverage to carry an explicit review note.
+The [BBAW/CMG catalogue browser](https://pergamap.com/library#bbaw) loads a local metadata index refreshed weekly from the authoritative catalogue. The import records BBAW record numbers, titles, Kühn references, language-column presence, retrieval date, and source checksum; it does not republish BBAW's bibliographic strings or automatically change Pergamap's editorial status fields. A curated crosswalk connects the two catalogues, and CI requires every disagreement about English coverage to carry an explicit review note.
 
 ## Contributing
 

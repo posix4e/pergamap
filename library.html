@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The library — Pergamap</title>
+<meta name="description" content="Galen's surviving works, the Arabic witnesses held for collation, and the BBAW/CMG translation catalogue they are checked against — one library, three registers.">
+<meta property="og:title" content="The library — Pergamap">
+<meta property="og:description" content="The catalogue of Galen's works, the Arabic witnesses, and the BBAW audit trail, in one place.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Pergamap">
+<link rel="canonical" href="https://pergamap.com/library">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="alternate" type="application/ld+json" href="/data/catalogue-metadata.json" title="Pergamap dataset metadata">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site">
+  <a class="brand" href="index.html">Perga<span>map</span></a>
+  <nav aria-label="Primary">
+    <a href="library.html" class="here" aria-current="page">Library</a>
+    <a href="transmission.html">Transmission</a>
+    <a href="translations/index.html">Texts</a>
+    <a href="roadmap.html">Roadmap</a>
+    <a href="https://github.com/posix4e/pergamap">GitHub</a>
+  </nav>
+</header>
+<main class="wide">
+  <h1>The library</h1>
+  <p class="lead">One collection, three registers: the works themselves, the Arabic witnesses we hold for collation, and the BBAW/CMG catalogue against which every translation claim is checked. Entries marked <span class="conf">unverified</span> rest on recalled scholarship; <span class="conf">needs research</span> means no one has looked. <a href="https://github.com/posix4e/pergamap/issues">Corrections welcome.</a></p>
+
+  <noscript><p class="notice">JavaScript is off, so the tables and tabs will not render. The data is directly readable: <a href="data/works.json">works.json</a>, <a href="sources/arabic/manifest.json">the witness manifest</a>, and <a href="data/bbaw-galen-translations.json">the BBAW snapshot</a>.</p></noscript>
+  <nav class="viewtabs" aria-label="Library views">
+    <a href="#works" id="tab-works" aria-current="true">Works</a>
+    <a href="#witnesses" id="tab-witnesses">Arabic witnesses</a>
+    <a href="#bbaw" id="tab-bbaw">BBAW audit</a>
+  </nav>
+
+  <section class="view" id="view-works" aria-labelledby="tab-works">
+    <div class="controls">
+      <input type="search" id="works-q" placeholder="Search titles…" aria-label="Search titles">
+      <button type="button" data-f="all" class="on" aria-pressed="true">All</button>
+      <button type="button" data-f="none" aria-pressed="false">No English</button>
+      <button type="button" data-f="partial" aria-pressed="false">Partial</button>
+      <button type="button" data-f="full" aria-pressed="false">Translated</button>
+      <button type="button" data-f="unknown" aria-pressed="false">Needs research</button>
+      <button type="button" data-f="arabic" aria-pressed="false">Arabic/Latin survivals</button>
+    </div>
+    <div class="tablewrap">
+    <table id="works-table">
+      <caption>Galen works and known English translation status</caption>
+      <thead><tr><th>Work</th><th>Kühn</th><th>Survives in</th><th>English translation</th><th>Text</th></tr></thead>
+      <tbody></tbody>
+    </table>
+    </div>
+    <p class="crumb" id="works-count" role="status" aria-live="polite">Loading catalogue…</p>
+    <noscript><p class="notice">JavaScript is required for filtering. Read the complete data in <a href="data/works.json">works.json</a>.</p></noscript>
+    <p class="crumb">Titles follow the conventional Latin of the <em>Thesaurus Linguae Graecae</em> and Kühn's edition; “Kühn” gives volume and, where verified, pages in <em>Claudii Galeni Opera Omnia</em> (1821–33).</p>
+  </section>
+
+  <section class="view" id="view-witnesses" aria-labelledby="tab-witnesses" hidden>
+    <p>Ḥunayn ibn Isḥāq and his circle rendered Galen into Syriac and Arabic at Baghdad in the ninth century, sometimes from Greek exemplars older than surviving direct witnesses. In the language of textual criticism these versions are <em>indirect tradition</em> — evidence about the text rather than copies of it — but a versional reading can descend from an independent branch of the stemma, and so belongs in it. Of any divergence, the question is which underlying Greek would account for it. Files come from the <a href="https://www.graeco-arabic-studies.org/">Digital Corpus for Graeco-Arabic Studies</a> under CC BY-SA 4.0; their later branches are drawn in the <a href="transmission.html">transmission map</a>.</p>
+    <div class="stats">
+      <div class="stat"><b id="s-transl">–</b><span>translations</span></div>
+      <div class="stat"><b id="s-summ">–</b><span>summaries and epitomes</span></div>
+      <div class="stat"><b id="s-cat">–</b><span>catalogues of Ḥunayn</span></div>
+      <div class="stat"><b id="s-chars">–</b><span>Arabic characters held</span></div>
+    </div>
+    <div class="controls">
+      <input type="search" id="wit-q" placeholder="Search titles…" aria-label="Search witness titles">
+      <button type="button" data-f="all" class="on" aria-pressed="true">All</button>
+      <button type="button" data-f="translation" aria-pressed="false">Translations</button>
+      <button type="button" data-f="summary" aria-pressed="false">Summaries</button>
+      <button type="button" data-f="catalogue" aria-pressed="false">Catalogues</button>
+    </div>
+    <div class="tablewrap">
+    <table id="wit-table">
+      <caption>Arabic source files, provenance, and edition anchors</caption>
+      <thead><tr><th>Text</th><th>Kind</th><th>On Galen's</th><th>Anchored to</th><th>Extent</th><th>Files</th></tr></thead>
+      <tbody></tbody>
+    </table>
+    </div>
+    <p class="crumb" id="wit-count" role="status" aria-live="polite">Loading witness manifest…</p>
+    <noscript><p class="notice">JavaScript is required for filtering. Read the complete data in <a href="sources/arabic/manifest.json">manifest.json</a>.</p></noscript>
+    <p>Five of the translations have no Greek counterpart, the Greek being lost: <em>De nominibus medicis</em>, <em>De partium homoeomerium differentia</em>, <em>De optimo medico cognoscendo</em>, <em>De partibus artis medicativae</em>, <em>De causis contentivis</em>. For these the Arabic is not a check upon the text but the text itself. The first has never been put into English; a German version of 1931 is all there is.</p>
+  </section>
+
+  <section class="view" id="view-bbaw" aria-labelledby="tab-bbaw" hidden>
+    <p>Source evidence, distinct from Pergamap's editorial claims: a dated local index of the <a href="https://cmg.bbaw.de/startseite/arbeitsmittel/werkverzeichnisse/galenus-uebersetzungen/">BBAW/CMG catalogue of modern Galen translations</a>, refreshed weekly, recording titles, Kühn references, record numbers, and whether each language column carries an entry. The bibliographic strings remain on BBAW's authoritative page.</p>
+    <div class="stats">
+      <div class="stat"><b id="record-total">–</b><span>BBAW records</span></div>
+      <div class="stat"><b id="english-total">–</b><span>with English listed</span></div>
+      <div class="stat"><b id="retrieved-on">–</b><span>snapshot date</span></div>
+    </div>
+    <div class="controls">
+      <input type="search" id="bbaw-q" placeholder="Search titles or Kühn references…" aria-label="Search BBAW titles and Kühn references">
+      <button type="button" data-f="all" class="on" aria-pressed="true">All</button>
+      <button type="button" data-f="english" aria-pressed="false">English listed</button>
+      <button type="button" data-f="no-english" aria-pressed="false">No English entry</button>
+    </div>
+    <div class="tablewrap">
+    <table id="bbaw-table">
+      <caption>BBAW/CMG Galen translation records</caption>
+      <thead><tr><th>Record</th><th>Work</th><th>Kühn</th><th>English</th><th>Other languages</th><th>Pergamap</th></tr></thead>
+      <tbody></tbody>
+    </table>
+    </div>
+    <p class="crumb" id="bbaw-count" role="status" aria-live="polite">Loading BBAW snapshot…</p>
+    <noscript><p class="notice">JavaScript is required for filtering. Read the complete snapshot in <a href="data/bbaw-galen-translations.json">bbaw-galen-translations.json</a>.</p></noscript>
+    <p class="notice"><strong>Evidence boundary:</strong> an empty English column means only that this index found no English entry — not that none exists. A catalogue listing is not verification of the publication itself; a 1928 Edinburgh thesis containing a complete English <em>De differentiis febrium</em> appears in no catalogue at all.</p>
+  </section>
+</main>
+<footer class="site">
+  <p>Works data: Pergamap, CC BY-SA 4.0. Arabic witnesses: DCGAS (Harvard, Tufts, Warwick), CC BY-SA 4.0, with checksums in <a href="https://github.com/posix4e/pergamap/blob/main/sources/arabic/manifest.json">the manifest</a>. BBAW snapshot: Berlin-Brandenburg Academy of Sciences and Humanities, Corpus Medicorum Graecorum, retrieval date and source hash preserved in Git history; see their <a href="https://cmg.bbaw.de/startseite/impressum/">publication terms</a>.</p>
+</footer>
+<script src="assets/js/library.js" defer></script>
+<script src="assets/js/corpus.js" defer></script>
+<script src="assets/js/witnesses.js" defer></script>
+<script src="assets/js/bbaw-catalogue.js" defer></script>
+</body>
+</html>

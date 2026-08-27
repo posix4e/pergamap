@@ -279,7 +279,7 @@ function renderBranch(branch) {
   elements.selectedTitle.textContent = workTitle(work);
   elements.selectedSubtitle.textContent = `${work.titles.latin}${languages ? ` · survives in ${languages}` : ""}`;
   elements.selectedLinks.replaceChildren();
-  if (!branch.synthetic) appendLink(elements.selectedLinks, "Open in corpus", `corpus.html?work=${encodeURIComponent(work.id)}`);
+  if (!branch.synthetic) appendLink(elements.selectedLinks, "Open in library", `library.html?work=${encodeURIComponent(work.id)}`);
   work.digital_texts.forEach((digital) => appendLink(
     elements.selectedLinks,
     (work.survival.languages || []).includes(digital.language)

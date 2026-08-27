@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zack's corner — Pergamap</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Private working page.">
+<meta property="og:title" content="Zack's corner — Pergamap">
+<meta property="og:description" content="Private working page.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Pergamap">
+<link rel="canonical" href="https://pergamap.com/zcorner">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site">
+  <a class="brand" href="index.html">Perga<span>map</span></a>
+  <nav aria-label="Primary">
+    <a href="library.html">Library</a>
+    <a href="transmission.html">Transmission</a>
+    <a href="translations/index.html">Texts</a>
+    <a href="roadmap.html">Roadmap</a>
+    <a href="https://github.com/posix4e/pergamap">GitHub</a>
+  </nav>
+</header>
+<main>
+  <p class="tag">Unlisted · for Zack Candy</p>
+  <h1>Zack's corner</h1>
+  <p class="lead">Welcome, and thank you for taking this on. This page is not linked from anywhere and is kept out of search engines. It's meant to be gone through together: the first half is a tour of what exists and why, the second half is the first piece of real work.</p>
+
+  <h2>The problem</h2>
+  <p>Galen is the largest surviving author of Greco-Roman antiquity, and a great deal of him has never been put into English. There was no accessible map of <em>which</em> works those were, so we built one, and then started translating in the open. The translations are amateur and AI-assisted. They are published with the source text, the reasoning behind each rendering, and a draft flag, on the principle that a visible mistake is better than a buried one.</p>
+  <p>The reason you're here: the method now turns on judgements we are not qualified to make, and pretending otherwise would be the fastest way to produce something worthless.</p>
+
+  <h2>The tour</h2>
+
+  <h3>1 · The library <a class="crumb" href="library.html">library →</a></h3>
+  <p>Every work we know of, with the language it survives in and whether an English translation exists. The important column is not the status but the <em>confidence</em>: each row records whether a claim was checked, merely recalled, or never looked at. We also keep a local copy of the <a href="library.html#bbaw">BBAW/CMG translation catalogue</a> — 114 records — because that is the authority we check against.</p>
+  <p class="crumb">Why this matters, and the cautionary tale: we once listed the sixteen books of the pulse treatises as untranslated. They aren't. Johnston and Papavramidou published a translation in 2024, the BBAW catalogue lists it, and we had simply never looked. It was removed from our ballot. More recently a check turned up a complete English version of <em>On the Differences of Fevers</em> in a 1928 Edinburgh thesis — which the BBAW catalogue does <em>not</em> list, because it only records published work. Both errors ran in the same direction: claiming something needs doing that had already been done.</p>
+
+  <h3>2 · The witnesses <a class="crumb" href="library.html#witnesses">witnesses →</a></h3>
+  <p>Thirty-five Galen-related Arabic files from the Digital Corpus for Graeco-Arabic Studies, held locally with checksums: seventeen translations (one the undivided twin of the two-part Aphorisms commentary), sixteen Alexandrian summaries, and two catalogues — including Ḥunayn's <em>Risāla</em>, his own account of what he translated. More on that below.</p>
+
+  <h3>3 · The transmission map <a class="crumb" href="transmission.html">transmission →</a></h3>
+  <p>How each work reaches us: Greek manuscripts, Arabic versions, and the Hebrew, Latin and modern branches beyond. The Hebrew side is thin and unverified, and we know it.</p>
+
+  <h3>4 · How a translation is published <a class="crumb" href="translations/chunk.html?id=cml-1-1">a packet →</a></h3>
+  <p>Text is cut into chunks anchored to Kühn page numbers. Each segment carries the Greek, the English, the citations, and a written rationale for the rendering. Nothing is presented as finished; every draft says it awaits a reviewer, and until recently that reviewer did not exist.</p>
+
+  <h3>5 · The method, and how it was corrected <a class="crumb" href="translations/aphorisms-1-1.html">the verse →</a></h3>
+  <p>We began by calling the Greek and the Arabic peer witnesses of equal standing. Peter Adamson pointed out that this flattens a real distinction: the versions are <strong>indirect tradition</strong>, evidence about the text rather than copies of it, in the same class as quotations in a commentary. But their exemplars may antedate the surviving Greek, so a versional reading can still come from an independent branch — and the operative question at any divergence is <strong>which underlying Greek reading would account for it</strong>. Translation technique matters as the thing that makes retroversion better than guesswork, not as a measure of the witness's worth.</p>
+  <p>That correction is now the <a href="https://github.com/posix4e/pergamap/blob/main/HARNESS.md#the-witness-protocol">witness protocol</a>, and it forced us to admit that our own showcase example had presented a construal as though it were a variant.</p>
+
+  <h3>6 · How anyone corrects us</h3>
+  <p>Every claim on the site is a file in a public repository. Corrections arrive as pull requests, are checked automatically, and go live on merge. Peter's two sentences are a diff anyone can read or revert. <strong>You will never need to touch any of this</strong> — tell us in prose and we'll encode it. Your attention should go on judgement, not plumbing.</p>
+
+  <h2>The work</h2>
+  <p>Galen's commentary on the <em>Aphorisms</em> survives in Greek and in Ḥunayn's Arabic, both marking numbered lemmata. The arithmetic is now measured and on the record: <strong>both digitisations mark numbered lemmata 1–406, no gaps, identical sets</strong> — the <a href="https://github.com/posix4e/pergamap/blob/main/data/alignments/tlg092.json">alignment record</a> says so and says how it was checked. What the record deliberately does not claim is that number 200 in one tradition is the same <em>text</em> as number 200 in the other. That is a claim only a reader of both languages can make, and it is the question of this session.</p>
+  <p>Seven loci below, chosen rather than sampled. Brief answers are the right ones, and “looks fine” is a complete answer.</p>
+
+  <section class="locus">
+    <h3>Lemma 1</h3>
+    <p class="crumb">The famous one — and where we went wrong. Ḥunayn renders καιρὸς ὀξύς as “the time is narrow.” We first published that as though it were evidence about the <em>text</em>. It isn't: nothing suggests he read anything but ὀξύς. It is evidence about how the word was <em>taken</em>.</p>
+    <div class="pair">
+      <div class="grc" lang="grc">Ὁ βίος βραχὺς, ἡ δὲ τέχνη μακρὴ, ὁ δὲ καιρὸς ὀξὺς, ἡ δὲ πεῖρα σφαλερὴ, ἡ δὲ κρίσις χαλεπή. δεῖ δὲ οὐ μόνον ἑωυτὸν παρέχειν τὰ δέοντα ποιέοντα, ἀλλὰ καὶ τὸν νοσέοντα καὶ τοὺς παρέοντας καὶ τὰ ἔξωθεν.</div>
+      <div class="ara" lang="ar" dir="rtl">قال أبقراط: العمر قصير والصناعة طويلة والوقت ضيّق والتجربة خطر والقضاء عسر وقد ينبغي لك أن لا تقتصر على توخّي فعل ما ينبغي دون أن يكون ما يفعله المريض ومن يحضره كذلك والأشياء التي من خارج.</div>
+    </div>
+    <p class="ask"><b>Same aphorism?</b> &nbsp;·&nbsp; <b>If they differ:</b> does the Arabic point to a different Greek reading (a <i>variant</i>), or is it one way of taking the Greek we have (a <i>construal</i>)?</p>
+  </section>
+  <section class="locus">
+    <h3>Lemma 100</h3>
+    <p class="crumb">A control, early.</p>
+    <div class="pair">
+      <div class="grc" lang="grc">Τοῦ δὲ θέρεος ἔνιά τε τουτέων καὶ πυρετοὶ ξυνεχέες καὶ καῦσοι καὶ τριταῖοι πλεῖστοι καὶ τεταρταῖοι, ἔμετοι καὶ διάῤῥοιαι καὶ ὀφθαλμίαι καὶ ὤτων πόνοι καὶ στομάτων ἑλκώσιες καὶ σηπεδόνες αἰδοίων καὶ ἵδρωα.</div>
+      <div class="ara" lang="ar" dir="rtl">قال أبقراط: فأمّا في الصيف فيعرض بعض هذه الأمراض وحمّيات دائمة ومحرقة وغبّ كثيرة وقيء وذرب ورمد ووجع الأذن وقروح في الفم وعفن في الفروج وحصف.</div>
+    </div>
+    <p class="ask"><b>Same aphorism?</b> &nbsp;·&nbsp; <b>If they differ:</b> does the Arabic point to a different Greek reading (a <i>variant</i>), or is it one way of taking the Greek we have (a <i>construal</i>)?</p>
+  </section>
+  <section class="locus">
+    <h3>Lemma 200</h3>
+    <p class="crumb">A control, mid-work.</p>
+    <div class="pair">
+      <div class="grc" lang="grc">Τὰ ἐπιληπτικὰ ὁκόσοισι πρὸ τῆς ἤβης γίνεται, μετάστασιν ἔχει. ὁκόσοισι δὲ πέντε καὶ εἴκοσιν ἐτέων γίνεται, τουτέοισι τὰ πολλὰ συναποθνήσκει.</div>
+      <div class="ara" lang="ar" dir="rtl">قال أبقراط: من أصابه الصرع قبل نبات الشعر في العانة فإنّه يحدث له انتقال، فأمّا من عرض له وقد أتى عليه من السنين خمس وعشرون سنة فإنّه يموت وهو به.</div>
+    </div>
+    <p class="ask"><b>Same aphorism?</b> &nbsp;·&nbsp; <b>If they differ:</b> does the Arabic point to a different Greek reading (a <i>variant</i>), or is it one way of taking the Greek we have (a <i>construal</i>)?</p>
+  </section>
+  <section class="locus">
+    <h3>Lemma 265</h3>
+    <p class="crumb">Last lemma of our first Arabic file.</p>
+    <div class="pair">
+      <div class="grc" lang="grc">Οἱ ἰκτεριώδεες οὐ πάνυ τι πνευματώδεες εἰσίν.</div>
+      <div class="ara" lang="ar" dir="rtl">قال أبقراط: من كان به يرقان فليس يكاد تتولّد فيه الرياح.</div>
+    </div>
+    <p class="ask"><b>Same aphorism?</b> &nbsp;·&nbsp; <b>If they differ:</b> does the Arabic point to a different Greek reading (a <i>variant</i>), or is it one way of taking the Greek we have (a <i>construal</i>)?</p>
+  </section>
+  <section class="locus">
+    <h3>Lemma 266</h3>
+    <p class="crumb">First lemma of our second Arabic file. If an off-by-one exists anywhere, it is likeliest across this join.</p>
+    <div class="pair">
+      <div class="grc" lang="grc">Ἐν τῇσι λειεντερίῃσιν ὀξυρεγμίη ἐπιγινομένη μὴ πρότερον γινομένη σημεῖον ἀγαθόν.</div>
+      <div class="ara" lang="ar" dir="rtl">قال أبقراط: إذا حدث الجشاء الحامض في العلّة التي يقال لها زلق الأمعاء بعد تطاولها ولم يكن كان قبل ذلك فهو علامة محمودة.</div>
+    </div>
+    <p class="ask"><b>Same aphorism?</b> &nbsp;·&nbsp; <b>If they differ:</b> does the Arabic point to a different Greek reading (a <i>variant</i>), or is it one way of taking the Greek we have (a <i>construal</i>)?</p>
+  </section>
+  <section class="locus">
+    <h3>Lemma 350</h3>
+    <p class="crumb">A control, late.</p>
+    <div class="pair">
+      <div class="grc" lang="grc">Ἐκ φαρμακοποσίης σπασμὸς θανατῶδες.</div>
+      <div class="ara" lang="ar" dir="rtl">قال أبقراط: التشنّج من شرب الدواء هو مميت.</div>
+    </div>
+    <p class="ask"><b>Same aphorism?</b> &nbsp;·&nbsp; <b>If they differ:</b> does the Arabic point to a different Greek reading (a <i>variant</i>), or is it one way of taking the Greek we have (a <i>construal</i>)?</p>
+  </section>
+  <section class="locus">
+    <h3>Lemma 406</h3>
+    <p class="crumb">The last lemma. Agreement at both ends bounds any drift between them.</p>
+    <div class="pair">
+      <div class="grc" lang="grc">Ὁκοῖα καὶ ἐν τοῖσι κατὰ τὴν κύστιν καὶ ἐν τοῖσι κατὰ τὴν κοιλίην ὑποχωρήμασι καὶ ἐν τοῖσι κατὰ τὰς σάρκας καὶ ἤν πη ἄλλη τῆς φύσεως ἐκβαίνῃ τὸ σῶμα, ἢν ὀλίγον, ὀλίγη νοῦσος γίνεται, ἢν πολὺ δὲ, πολλὴ, ἢν πάνυ πολλὴ, θανάσιμον τὸ τοιοῦτον.</div>
+      <div class="ara" lang="ar" dir="rtl">ثمّ قيل بعد هذا: خروج البدن عن طبيعته كما يخرج فيما يستفرغ من المثانة وفيما يستفرغ من البطن وفيما يستفرغ من اللحم أو من غيره من البدن إن كان يسيراً كان المرض يسيراً وإن كان كثيراً كان المرض عظيماً وإن كان كثيراً جدّاً كان ذلك دليلاً على الموت.</div>
+    </div>
+    <p class="ask"><b>Same aphorism?</b> &nbsp;·&nbsp; <b>If they differ:</b> does the Arabic point to a different Greek reading (a <i>variant</i>), or is it one way of taking the Greek we have (a <i>construal</i>)?</p>
+  </section>
+
+
+  <section class="locus">
+    <h3>The interesting pair: lemma 405</h3>
+    <p class="crumb">Found by screening all 399 comparable lemma pairs for length anomalies; this is the largest, at 3.3× the median ratio.</p>
+    <div class="pair">
+      <div class="grc" lang="grc">Ἐπὶ αἵματος ἐμέτῳ φθόη καὶ τοῦ πύου κάθαρσις ἄνω.</div>
+      <div class="ara" lang="ar" dir="rtl">ثمّ قيل بعد هذا: ومن قيء الدم الفساد وخروج المدّة من فوق، ومن الفساد النزلة من الرأس، ومن النزلة الاختلاف، ومن الاختلاف احتباس القذف من فوق، ومن ذلك الاحتباس الموت.</div>
+    </div>
+    <p>The printed Greek is a single link: after vomiting of blood, consumption and a purging of pus upward. The Arabic gives a chain of five — vomiting of blood, corruption, catarrh from the head, diarrhoea, retention of the expectoration, death — and opens not with the usual <span lang="ar" dir="rtl">قال أبقراط</span> but with <span lang="ar" dir="rtl">ثمّ قيل بعد هذا</span>, “then it is said after this.” More links than the Greek has is not a translator's habit of fullness; it looks like a different text.</p>
+    <p class="ask"><b>The question that matters:</b> does the Arabic imply a Greek exemplar carrying the fuller chain — a <i>variant</i> — or is Ḥunayn supplying the sequel from the neighbouring aphorisms, a <i>construal</i> stretched to its limit? &nbsp;<a href="https://github.com/posix4e/pergamap/issues/new?title=Reading%3A+Aphorisms+lemma+405+%E2%80%94+variant+or+construal%3F&amp;labels=zcorner">Record your reading →</a></p>
+  </section>
+
+  <section class="locus">
+    <h3>The control: lemma 117</h3>
+    <div class="pair">
+      <div class="grc" lang="grc">Τοὺς δὲ δυσεμέας καὶ μέσας εὐσάρκους κάτω, ὑποστελλομένους θέρος.</div>
+      <div class="ara" lang="ar" dir="rtl">قال أبقرلط: فأمّا من كان يعسر عليه القيء وكان من حسن اللحم على حال متوسّطة فاجعل استفراغك إيّاه بالدواء من أسفل وتوقّ أن تفعل ذلك في الصيف.</div>
+    </div>
+    <p>The same screen catches this one at 2.1× — and here the doubling is plainly the translator at work: the telegraphic Greek (hard-to-vomit patients, moderately fleshy, purge downward, avoid in summer) is unfolded into full clinical instruction with nothing added. Same translator, same book, and a divergence of an entirely different kind from 405. Across the whole commentary the median Arabic-to-Greek length ratio is 0.94, but the tails are one-sided: twenty-nine lemmata run past 1.4×, only nine fall under 0.6×. Ḥunayn expands; the question is whether length screening like this is a defensible way to hunt candidate variants at scale, or a net that mostly catches his prose habits.</p>
+    <p class="ask"><b>Two questions:</b> is 117 as innocent as it looks — and is the screening method sound? &nbsp;<a href="https://github.com/posix4e/pergamap/issues/new?title=Reading%3A+Aphorisms+lemma+117%2C+and+the+length-screen+method&amp;labels=zcorner">Record your reading →</a></p>
+  </section>
+  <section class="locus">
+    <h3>Afterwards: the Risāla</h3>
+    <p>Our copy of Ḥunayn's <em>Risāla</em> divides into <strong>130 sections</strong>, one per work: what he translated, into Syriac or Arabic, for whom, and what Greek manuscripts he could find and in what state. Sections average 394 Arabic characters; <strong>§20 runs to 2,975 — seven and a half times the mean</strong> — and its first line names its subject:</p>
+    <p class="ara" lang="ar" dir="rtl">(ك) كتابه في حيلة البرء. هذا الكتاب جعله في أربع عشرة مقالة وغرضه فيه أن يصف كيف يداوى كلّ واحد من الأمراض بطريق القياس ويقتصر فيه على الأعراض العامّيّة التي ينبغي أن يقصد قصدها في ذلك فيستخرج منها ما ينبغي أن يداوى به كلّ مرض من الأمراض ويضرب لذلك مثالات يسير…</p>
+    <p>— “his book on the Method of Healing,” <span lang="ar" dir="rtl">حيلة البرء</span>, in fourteen books: Galen's largest therapeutic work, and famously the one whose translation history Ḥunayn recounts at length. So the length signal seems to mean something: he wrote most where the transmission gave him most trouble. If that holds across all 130 sections, section length becomes a crude ranking of where the Greek tradition was already unstable in the ninth century — and turning the <em>Risāla</em> into structured data becomes a map of the entire Arabic Galen. That is the piece of work we would most like your help with, and the first question is simply whether our reading of §20 is right. &nbsp;<a href="https://github.com/posix4e/pergamap/issues/new?title=Risala+%C2%A720%3A+is+our+reading+right%2C+and+does+length+track+transmission+trouble%3F&amp;labels=zcorner">Record your reading →</a></p>
+  </section>
+
+  <section class="locus">
+    <h3>Further down the queue</h3>
+    <p>Kept short here; the <a href="https://github.com/posix4e/pergamap/blob/main/zcorner-queue.md">running queue</a> has the detail. In rough order: whether a Jawāmiʿ epitome carries any textual weight (<em>On Crises</em> sits on the ballot with only an epitome behind it); what the six translation-plus-epitome pairs reveal about what Alexandria cut; whether you read Hebrew, which decides who takes that branch of the transmission map; and the numeral problem — the drug books carry a quantity mark every fourteen words, quantities are what manuscripts corrupt silently, and a version that spells its numbers as words may there outrank the Greek. None of this is for the first session; it is where the road goes.</p>
+  </section>
+
+  <section class="locus">
+    <h3>Practicalities</h3>
+    <p>Reply however suits you — email to <a href="mailto:info@pergamap.com">info@pergamap.com</a>, or just talk it through. On payment: Peter mentioned you've done editorial work before; tell us what that paid and we'll work from it rather than guess. You'll be credited by name for anything you'd like to be credited for, and not credited at all if you'd rather not appear on an AI-assisted project — that's a real choice and nobody will ask why.</p>
+    <p class="crumb">If any of this is the wrong shape, say so plainly. This is the start of an arrangement we'd like to get right, not a test.</p>
+  </section>
+</main>
+<footer class="site">
+  <p>Greek: First1KGreek (tlg0057.tlg092), CC BY-SA. Arabic: Digital Corpus for Graeco-Arabic Studies, Ḥunayn ibn Isḥāq, CC BY-SA. Both anchored to Kühn XVIIb–XVIIIa.</p>
+</footer>
+</body>
+</html>

@@ -50,7 +50,7 @@ def arabic_pages(path):
             re.findall(r'<pb[^>]*edRef="#(edKuhn[^"]*)"[^>]*\bn="(\d+)"', text)]
 
 
-def arabic_lemmata(path):
+def lemmata(path):
     text = pathlib.Path(path).read_text(encoding="utf-8")
     return [int(n) for n in re.findall(r'<quote type="lemma"[^>]*\bn="(\d+)"', text)]
 
@@ -116,12 +116,17 @@ def main():
                    for i in range(len(gp))],
         )
 
-    lem = arabic_lemmata(apath)
+    lem = lemmata(apath)
+    glem = lemmata(gpath)
+    agree = sorted(set(glem)) == sorted(set(lem))
     report["lemmata"] = {
+        "greek_count": len(set(glem)),
+        "numbering_agrees": agree,
         "arabic_numbered": len(lem),
-        "note": "Hippocratic lemma numbers are marked in the Arabic only. The Greek "
-                "carries no corresponding markers in this digitisation, so lemma-level "
-                "alignment is not derivable here and is not claimed.",
+        "note": "Both digitisations mark numbered Hippocratic lemmata. Where "
+                "numbering_agrees is true the two carry identical lemma-number sets; "
+                "number-to-number identity of the underlying text is a separate claim, "
+                "to be tested by collation rather than asserted from markup.",
     }
 
     out = ROOT / "data" / "alignments" / f"{args.work}.json"

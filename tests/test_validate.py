@@ -375,7 +375,7 @@ class ValidatorTests(unittest.TestCase):
         """
         roadmap = (validate.ROOT / "roadmap.html").read_text()
         section = roadmap.split("<h2>Phase 2")[1].split("<h2>")[0]
-        candidates = re.findall(r"corpus\.html\?work=(tlg\d+)", section)
+        candidates = re.findall(r"library\.html\?work=(tlg\d+)", section)
         self.assertTrue(candidates, "no shortlist candidates found in roadmap.html")
         document = json.loads((validate.ROOT / "data" / "works.json").read_text())
         works = {work["id"]: work for work in document["works"]}

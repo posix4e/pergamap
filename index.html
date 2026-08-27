@@ -12,75 +12,66 @@
 <link rel="canonical" href="https://pergamap.com/">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="alternate" type="application/ld+json" href="/data/catalogue-metadata.json" title="Pergamap dataset metadata">
+<link rel="preload" href="assets/fonts/EBGaramond-400-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <header class="site">
   <a class="brand" href="index.html" aria-current="page">Perga<span>map</span></a>
   <nav aria-label="Primary">
-    <a href="corpus.html">The corpus</a>
-    <a href="bbaw-catalogue.html">BBAW catalogue</a>
-    <a href="transmission.html">Text map</a>
-    <a href="witnesses.html">Witnesses</a>
+    <a href="library.html">Library</a>
+    <a href="transmission.html">Transmission</a>
+    <a href="translations/index.html">Texts</a>
     <a href="roadmap.html">Roadmap</a>
-    <a href="translations/aphorisms-1-1.html">Triangulated verse</a>
     <a href="https://github.com/posix4e/pergamap">GitHub</a>
   </nav>
 </header>
 <main>
   <h1>Much of Galen remains inaccessible in English.</h1>
-  <p class="lead">Galen of Pergamon (129 – c. 216 CE) is the largest surviving author of Greco-Roman antiquity, with millions of words preserved and a corpus commonly estimated at about a tenth of surviving Greek literature from before 350 CE. Much of it remains available only in ancient Greek, medieval Arabic, or Latin editions.</p>
+  <p class="lead">Galen of Pergamon (129 – c. 216 CE) is the largest surviving author of Greco-Roman antiquity — a corpus commonly put at a tenth of all Greek literature surviving from before 350 CE. Much of it can still be read only in ancient Greek, medieval Arabic, or the Latin of an 1820s edition.</p>
 
-  <div class="stats" id="stats">
-    <div class="stat"><b id="s-total">–</b><span>works tracked</span></div>
-    <div class="stat"><b id="s-none">–</b><span>no English translation known</span></div>
-    <div class="stat"><b id="s-unknown">–</b><span>translation status needs research</span></div>
-    <div class="stat"><b id="s-some">–</b><span>have at least one English version</span></div>
+  <div class="shelf-wrap">
+    <div class="shelf" id="shelf" aria-hidden="true"></div>
+    <div class="shelf-legend" aria-hidden="true">
+      <span><i class="k-none"></i> no English known</span>
+      <span><i class="k-partial"></i> partial</span>
+      <span><i class="k-full"></i> translated</span>
+      <span><i class="k-unknown"></i> needs research</span>
+    </div>
+    <p class="shelf-caption" id="shelf-caption">Each spine is one work. <noscript>JavaScript is off, so the shelf is empty — the complete catalogue is in <a href="data/works.json">works.json</a> and on the <a href="library.html">library page</a>.</noscript></p>
+    <p class="shelf-caption">Counted by titles the shelf looks well served; counted by words it does not. The untranslated spines include most of Galen's largest books — the seventeen books of compound-drug recipes and <em>On Crises</em> among them — so the missing share of the corpus is far larger than the red alone suggests.</p>
+    <p id="stats-error" class="error" role="alert" hidden>The catalogue could not be loaded; the shelf stands empty. The data itself is in <a href="data/works.json">works.json</a>.</p>
   </div>
-  <p id="stats-error" class="error" role="alert" hidden>The catalogue statistics could not be loaded.</p>
-  <noscript><p class="notice">JavaScript is required for live totals. The complete schema-v2 catalogue is available in <a href="data/works.json">works.json</a>.</p></noscript>
-
-  <p>Substantial pharmacological and clinical works remain without a known complete English version. The catalogue is preliminary and source-backed corrections are part of the project, so campaign targets are rechecked before translation begins.</p>
 
   <div class="feature">
     <p class="feature-kicker">Method</p>
     <h2 class="feature-h">Reading the Greek against its witnesses</h2>
-    <p>A great deal of Galen survives in more than one line of transmission: the Greek direct tradition, Arabic translations made from now-lost Greek exemplars, and old Latin versions. The versions are <em>indirect tradition</em> — evidence about the text rather than copies of it — but their exemplars may antedate the surviving Greek, so a versional reading can come from an independent branch of the stemma. Of any divergence we ask which underlying Greek would account for it, and whether what we have is a variant in the text or a construal of it. The <a href="witnesses.html">Arabic witnesses we hold</a> are listed with their provenance.</p>
-    <p>At <em>Aphorisms</em> i.1 the Greek <span lang="grc">καιρὸς ὀξύς</span> hangs between two senses: the critical moment is acute, or the time is short. Ḥunayn renders it <span lang="ar" dir="rtl">الوقت ضيّق</span>, “the time is narrow.” We first published that as a second witness converging on the temporal reading. It is nothing of the kind: Ḥunayn was translating Galen's commentary, in which the gloss <span lang="grc">ὀλιγοχρόνιον</span> stands a few lines below the lemma, so his rendering follows from the exposition he had in hand. <a href="translations/aphorisms-1-1.html">How we got that wrong, and what the passage does show →</a></p>
+    <p>A great deal of Galen survives in more than one line of transmission: the Greek direct tradition, Arabic translations made from now-lost Greek exemplars, and old Latin versions. The versions are <em>indirect tradition</em> — evidence about the text rather than copies of it — but their exemplars may antedate the surviving Greek, so a versional reading can descend from an independent branch of the stemma. Of any divergence we ask which underlying Greek would account for it, and whether what we have is a variant in the text or a construal of it. The <a href="library.html#witnesses">witnesses we hold</a> are listed with their provenance.</p>
+    <p>At <em>Aphorisms</em> i.1 the Greek <span lang="grc">καιρὸς ὀξύς</span> hangs between two senses: the critical moment is acute, or the time is short. Ḥunayn's Arabic gives <span lang="ar" dir="rtl">الوقت ضيّق</span>, “the time is narrow.” We first published that as a second witness converging on the temporal reading. It is nothing of the kind: Ḥunayn was translating Galen's commentary, in which the gloss <span lang="grc">ὀλιγοχρόνιον</span> stands a few lines below the lemma, so his rendering follows from the exposition he had in hand. <a href="translations/aphorisms-1-1.html">The verse, with the retraction →</a></p>
   </div>
 
   <h2>What this site is</h2>
-  <p>Three things, all in the open:</p>
   <ol>
-    <li><strong>An atlas.</strong> A <a href="corpus.html">tracking table of the surviving corpus</a> and an <a href="transmission.html">interactive text map</a>: each work, the language it survives in, where the text is digitized, whether an English translation exists, and the documented paths into Arabic, Hebrew, Latin, and modern editions. Each entry is flagged by how well its status has been verified, because half the battle is simply knowing what's missing. Coverage today: the 97 works digitized by First1KGreek plus 11 added by hand; roughly two dozen more surviving works are still to be entered.</li>
-    <li><strong>A roadmap.</strong> A <a href="roadmap.html">plan for translating the untranslated</a>, starting with texts whose Greek is already digitized, and a public vote on which work gets the first full campaign.</li>
-    <li><strong>Working translations.</strong> A <a href="translations/aphorisms-1-1.html">verse of the <em>Commentary on the Aphorisms</em></a>, the Greek collated with Ḥunayn's Arabic; and the <a href="translations/chunk.html?id=cml-1-1">opening of the compound-drug book on the scalp</a> — hitherto without a published English rendering — as an unreviewed project draft.</li>
+    <li><strong>A library.</strong> The <a href="library.html">catalogue of the surviving corpus</a> — each work, its languages, its digitizations, and whether English exists, every claim flagged by how well it has been verified — together with the <a href="library.html#witnesses">Arabic witnesses held for collation</a> and the <a href="library.html#bbaw">BBAW catalogue they are audited against</a>. The <a href="transmission.html">transmission map</a> draws each work's paths into Arabic, Hebrew, Latin, and the modern editions.</li>
+    <li><strong>A method.</strong> Texts are cut into source-pinned packets; drafts are published with citations, a written rationale for every rendering, and an explicit draft flag, so mistakes are catchable rather than buried. The procedure is in <a href="https://github.com/posix4e/pergamap/blob/main/HARNESS.md">HARNESS.md</a>.</li>
+    <li><strong>The texts themselves.</strong> A <a href="translations/index.html">small but growing set of passages</a>: a verse of the <em>Aphorisms</em> commentary collated across both traditions, and the opening of the compound-drug book on the scalp — hitherto without a published English rendering — as an unreviewed draft.</li>
   </ol>
 
   <div class="notice">
-    <p><strong>Honesty first.</strong> This is an amateur, AI-assisted project, not a critical edition. Drafts are published with their source, citations, uncertainty, and translation rationale so readers can catch mistakes. The catalogue is preliminary; “unverified” and “needs research” mean exactly that.</p>
+    <p><strong>Honesty first.</strong> This is an amateur, AI-assisted project, not a critical edition. The catalogue is preliminary; “unverified” and “needs research” mean exactly that. Corrections arrive as <a href="https://github.com/posix4e/pergamap/blob/main/CONTRIBUTING.md">pull requests</a>, are checked automatically, and go live on merge — the fastest way to prove us wrong is to open one.</p>
   </div>
   <div class="notice medical-warning"><p><strong>Historical text only.</strong> Ancient remedies may be toxic or unsafe. Pergamap is not medical advice; do not prepare or use remedies described in these texts.</p></div>
 
   <h2>How to help</h2>
   <ul>
-    <li><strong>Vote</strong> on the <a href="https://github.com/posix4e/pergamap/issues/18">ballot</a> for the work that gets the first full campaign.</li>
-    <li><strong>Verify an entry.</strong> Pick any work marked “unverified” in <a href="corpus.html">the corpus table</a>, find out whether an English translation exists, and file an issue or pull request with your source.</li>
-    <li><strong>Translate a chunk.</strong> If you read Greek (or Arabic, or want to review AI drafts), see <a href="https://github.com/posix4e/pergamap/blob/main/CONTRIBUTING.md">CONTRIBUTING</a>.</li>
+    <li><strong>Vote</strong> in the <a href="https://github.com/posix4e/pergamap/issues/18">campaign ballot</a> — every candidate has been rechecked against the BBAW catalogue and beyond.</li>
+    <li><strong>Verify an entry.</strong> Pick any work marked “unverified” in <a href="library.html">the library</a>, find out whether an English translation exists, and file an issue or pull request with your source.</li>
+    <li><strong>Translate a chunk.</strong> If you read Greek or Arabic — or want to review AI drafts — see <a href="https://github.com/posix4e/pergamap/blob/main/CONTRIBUTING.md">CONTRIBUTING</a>.</li>
   </ul>
-
-  <h2>How to contribute via pull request</h2>
-  <p>The whole site is a <a href="https://github.com/posix4e/pergamap">public repository</a> of plain HTML, JavaScript, and versioned JSON — no framework or production build step.</p>
-  <ol>
-    <li><strong>Fork</strong> <a href="https://github.com/posix4e/pergamap">posix4e/pergamap</a> on GitHub and make a branch.</li>
-    <li><strong>Fixing the catalogue?</strong> Edit <a href="https://github.com/posix4e/pergamap/blob/main/data/works.json"><code>data/works.json</code></a> — update <code>english.status</code>, add a structured citation, and set <code>english.verification.status</code> to <code>checked</code> only with a dated source reference.</li>
-    <li><strong>Adding a translation?</strong> Use the <a href="https://github.com/posix4e/pergamap/blob/main/HARNESS.md">harness</a> to generate a manageable, source-pinned packet. Fill in the English, citations, and a concise translation rationale. First claim the range in an <a href="https://github.com/posix4e/pergamap/issues">issue</a>.</li>
-    <li><strong>Preview locally</strong> with <code>python3 -m http.server 8000</code>; opening files through <code>file://</code> cannot load the JSON datasets.</li>
-    <li><strong>Open the pull request</strong> — one work or one chunk per PR, sources cited. Review happens in the open, arguing from the Greek. Merged means live.</li>
-  </ol>
 </main>
 <footer class="site">
-  <p>Sources: Greek texts from the <a href="https://github.com/OpenGreekAndLatin/First1KGreek">First Thousand Years of Greek</a> project and Arabic texts from the <a href="https://www.graeco-arabic-studies.org/">Digital Corpus for Graeco-Arabic Studies</a>, with Kühn's public-domain edition available via the <a href="https://archive.org/details/b29339339_0012">Wellcome Library</a>. Site content: <a href="LICENSE">CC BY-SA 4.0</a>; see the <a href="NOTICE.md">provenance notice</a>.</p>
+  <p>Sources: Greek from <a href="https://github.com/OpenGreekAndLatin/First1KGreek">First1KGreek</a> and Arabic from the <a href="https://www.graeco-arabic-studies.org/">Digital Corpus for Graeco-Arabic Studies</a> (CC BY-SA), after Kühn, <em>Claudii Galeni Opera Omnia</em> (1821–33; scans, <a href="https://archive.org/details/b29339339_0012">Wellcome Library</a>). Site and translations CC BY-SA 4.0.</p>
+  <p class="colophon">Set in EB Garamond, with Arabic in Amiri — both under the SIL Open Font License — on paper-coloured ground, rubricated in the manner of the editions it depends on.</p>
 </footer>
 <script src="assets/js/index.js" defer></script>
 </body>

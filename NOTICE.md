@@ -12,3 +12,7 @@ Pergamap's original site text, catalogue arrangement, metadata, and project tran
 Bibliographic facts and citations remain attributable to their authors and publishers. Pergamap's CC license does not replace or broaden third-party permissions.
 
 The transmission map's later-language relationships cite the scholarly repositories, specialist databases, and library catalogues named in `data/transmission.json`. The social-preview artwork for that page was generated for Pergamap with OpenAI image generation and is distributed with the project's original site content.
+
+## Typefaces
+
+- **EB Garamond** (Georg Duffner and Octavio Pardo) and **Amiri** (Khaled Hosny), both vendored as woff2 subsets in `assets/fonts/`, are used under the SIL Open Font License 1.1. The fonts remain under their own license, separate from this repository's content license.

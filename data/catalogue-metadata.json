@@ -1,48 +1,55 @@
 {
-  "@context": "https://schema.org",
-  "@type": "Dataset",
-  "name": "Pergamap Galen corpus and transmission datasets",
-  "description": "A preliminary, source-aware catalogue of Galen's surviving works, textual witnesses, digitized texts, English translation coverage, and selected documented transmission routes.",
-  "url": "https://pergamap.com/corpus",
-  "version": "2",
-  "dateModified": "2026-08-12",
-  "license": "https://creativecommons.org/licenses/by-sa/4.0/",
-  "creator": {
-    "@type": "Person",
-    "name": "posix4e",
-    "url": "https://github.com/posix4e"
+ "@context": "https://schema.org",
+ "@type": "Dataset",
+ "name": "Pergamap Galen corpus and transmission datasets",
+ "description": "A preliminary, source-aware catalogue of Galen's surviving works, textual witnesses, digitized texts, English translation coverage, and selected documented transmission routes.",
+ "url": "https://pergamap.com/library",
+ "version": "2",
+ "dateModified": "2026-08-12",
+ "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+ "creator": {
+  "@type": "Person",
+  "name": "posix4e",
+  "url": "https://github.com/posix4e"
+ },
+ "keywords": [
+  "Galen",
+  "ancient medicine",
+  "Greek",
+  "Arabic",
+  "translation",
+  "digital humanities"
+ ],
+ "distribution": [
+  {
+   "@type": "DataDownload",
+   "encodingFormat": "application/json",
+   "contentUrl": "https://pergamap.com/data/works.json"
   },
-  "keywords": ["Galen", "ancient medicine", "Greek", "Arabic", "translation", "digital humanities"],
-  "distribution": [
-    {
-      "@type": "DataDownload",
-      "encodingFormat": "application/json",
-      "contentUrl": "https://pergamap.com/data/works.json"
-    },
-    {
-      "@type": "DataDownload",
-      "encodingFormat": "application/json",
-      "contentUrl": "https://pergamap.com/data/bbaw-galen-translations.json"
-    },
-    {
-      "@type": "DataDownload",
-      "encodingFormat": "application/json",
-      "contentUrl": "https://pergamap.com/data/bbaw-crosswalk.json"
-    },
-    {
-      "@type": "DataDownload",
-      "encodingFormat": "application/json",
-      "contentUrl": "https://pergamap.com/data/transmission.json"
-    },
-    {
-      "@type": "DataDownload",
-      "encodingFormat": "application/json",
-      "contentUrl": "https://pergamap.com/sources/arabic/manifest.json"
-    }
-  ],
-  "isBasedOn": [
-    "https://cmg.bbaw.de/startseite/arbeitsmittel/werkverzeichnisse/galenus-uebersetzungen/",
-    "https://github.com/OpenGreekAndLatin/First1KGreek",
-    "https://www.graeco-arabic-studies.org/"
-  ]
+  {
+   "@type": "DataDownload",
+   "encodingFormat": "application/json",
+   "contentUrl": "https://pergamap.com/data/bbaw-galen-translations.json"
+  },
+  {
+   "@type": "DataDownload",
+   "encodingFormat": "application/json",
+   "contentUrl": "https://pergamap.com/data/bbaw-crosswalk.json"
+  },
+  {
+   "@type": "DataDownload",
+   "encodingFormat": "application/json",
+   "contentUrl": "https://pergamap.com/data/transmission.json"
+  },
+  {
+   "@type": "DataDownload",
+   "encodingFormat": "application/json",
+   "contentUrl": "https://pergamap.com/sources/arabic/manifest.json"
+  }
+ ],
+ "isBasedOn": [
+  "https://cmg.bbaw.de/startseite/arbeitsmittel/werkverzeichnisse/galenus-uebersetzungen/",
+  "https://github.com/OpenGreekAndLatin/First1KGreek",
+  "https://www.graeco-arabic-studies.org/"
+ ]
 }

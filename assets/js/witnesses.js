@@ -1,4 +1,5 @@
 "use strict";
+(() => {
 
 const KIND = { translation: "translation", summary: "summary", catalogue: "catalogue" };
 const EDITION = {
@@ -9,9 +10,10 @@ const EDITION = {
 let texts = [];
 let activeFilter = "all";
 let query = "";
-const body = document.querySelector("#t tbody");
-const count = document.getElementById("count");
-const buttons = [...document.querySelectorAll(".controls button")];
+const wroot = document.getElementById("view-witnesses");
+const body = wroot.querySelector("#wit-table tbody");
+const count = wroot.querySelector("#wit-count");
+const buttons = [...wroot.querySelectorAll(".controls button")];
 
 function node(tag, className, text) {
   const result = document.createElement(tag);
@@ -90,7 +92,7 @@ fetch("sources/arabic/manifest.json")
     count.classList.add("error");
   });
 
-document.getElementById("q").addEventListener("input", (event) => {
+wroot.querySelector("#wit-q").addEventListener("input", (event) => {
   query = event.target.value;
   apply();
 });
@@ -103,3 +105,5 @@ buttons.forEach((button) => button.addEventListener("click", () => {
   activeFilter = button.dataset.f;
   apply();
 }));
+
+})();

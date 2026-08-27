@@ -1,4 +1,5 @@
 "use strict";
+(() => {
 
 let records = [];
 let worksById = new Map();
@@ -10,7 +11,7 @@ let requestedRecordId = new URL(location.href).searchParams.get("record");
 const body = document.querySelector("#bbaw-table tbody");
 const search = document.getElementById("bbaw-q");
 const count = document.getElementById("bbaw-count");
-const buttons = [...document.querySelectorAll(".controls button")];
+const buttons = [...document.getElementById("view-bbaw").querySelectorAll(".controls button")];
 
 function node(tag, className, text) {
   const result = document.createElement(tag);
@@ -37,9 +38,13 @@ function addRow(record) {
   const english = record.translation_columns.english;
   const englishCell = row.appendChild(document.createElement("td"));
   if (english) {
-    englishCell.appendChild(node("span", "chip full", "listed"));
+    const chip = node("span", "chip full", "listed");
+    chip.title = "BBAW's catalogue lists at least one English translation for this work.";
+    englishCell.appendChild(chip);
   } else {
-    englishCell.appendChild(node("span", "chip unknown", "column empty"));
+    const chip = node("span", "chip unknown", "no entry");
+    chip.title = "BBAW's English column has no entry for this work — which is not proof that no translation exists.";
+    englishCell.appendChild(chip);
   }
   row.appendChild(node("td", "bbaw-other", otherTranslations(record) || "—"));
   const pergamapCell = row.appendChild(document.createElement("td"));
@@ -48,7 +53,7 @@ function addRow(record) {
     if (index) pergamapCell.appendChild(document.createElement("br"));
     const work = worksById.get(mapping.work_id);
     const link = node("a", "", work ? (work.titles.english || work.titles.latin) : mapping.work_id);
-    link.href = `corpus.html?work=${encodeURIComponent(mapping.work_id)}`;
+    link.href = `library.html?work=${encodeURIComponent(mapping.work_id)}`;
     pergamapCell.appendChild(link);
     if (mapping.english_status_review) {
       pergamapCell.append(` · ${mapping.english_status_review.status}`);
@@ -132,3 +137,5 @@ Promise.all([
     link.href = "data/bbaw-galen-translations.json";
     count.appendChild(link);
   });
+
+})();

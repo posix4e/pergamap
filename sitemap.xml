@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://pergamap.com/</loc></url>
-  <url><loc>https://pergamap.com/corpus</loc></url>
-  <url><loc>https://pergamap.com/bbaw-catalogue</loc></url>
   <url><loc>https://pergamap.com/transmission</loc></url>
-  <url><loc>https://pergamap.com/witnesses</loc></url>
   <url><loc>https://pergamap.com/roadmap</loc></url>
   <url><loc>https://pergamap.com/translations/aphorisms-1-1</loc></url>
   <url><loc>https://pergamap.com/translations/chunk?id=cml-1-1</loc></url>
+  <url><loc>https://pergamap.com/library</loc></url>
+  <url><loc>https://pergamap.com/translations/</loc></url>
+  <url><loc>https://pergamap.com/translations/chunk?id=cml-1-2</loc></url>
 </urlset>
