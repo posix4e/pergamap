@@ -121,8 +121,17 @@ function renderEnd() {
     `${scored} of ${deck.cards.length} where you landed on a reading the sources support — which matters less than the fact that you now know why the other options were there.`));
 
   const box = root.appendChild(node("div", "notice"));
-  box.appendChild(node("p", "", "Every one of those questions has a real answer in a real text, and you can go and check all of them. That is the only thing this site is arguing for: not that our readings are right, but that the evidence should be in front of you where you can disagree with it."));
-  box.appendChild(node("p", "", "The passage you just worked on is one of two we have published in full. Most of Galen has never been put into English at all — a hundred and eight works, and for ninety-three of them nobody has even checked whether a translation exists."));
+  box.appendChild(node("p", "", "Four things you can now do to any claim about an ancient text, including ours:"));
+  const kit = box.appendChild(node("ul", ""));
+  for (const line of [
+    "Ask which sense of the word the sentence actually needs. A word with a range has no secret true meaning — and you can count the uses.",
+    "Ask which edition the Greek comes from, edited by whom, from which manuscripts.",
+    "Ask whether two witnesses are really independent, or whether one is reading the other.",
+    "Ask whether the person telling you has published anything they later had to take back.",
+  ]) {
+    kit.appendChild(node("li", "", line));
+  }
+  box.appendChild(node("p", "", "None of that requires Greek. It is the ordinary carefulness that keeps a confident claim honest, and it works just as well pointed at this site as at anyone else."));
 
   const links = root.appendChild(node("p", "ask"));
   for (const [label, href] of [
@@ -152,7 +161,7 @@ async function main() {
   intro.appendChild(node("p", "crumb", deck.note));
   root.appendChild(intro);
   const start = root.appendChild(node("p", "ask"));
-  const button = start.appendChild(node("button", "chip full", "Start — about five minutes"));
+  const button = start.appendChild(node("button", "chip full", `Start — ${deck.cards.length} questions`));
   button.type = "button";
   button.addEventListener("click", renderCard);
 }

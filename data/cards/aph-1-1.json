@@ -2,8 +2,8 @@
  "schema_version": 1,
  "id": "aph-1-1",
  "title": "Life is short",
- "lead": "Four questions about two passages of Galen. Guess before you look — being wrong is the point, and it takes about five minutes.",
- "note": "Every answer below is sourced. Where the honest answer is 'two readings are defensible', the card says so rather than inventing a right one.",
+ "lead": "Seven questions about Galen and the texts he comes down to us in. Guess before you look — being wrong is the point, and it takes about eight minutes.",
+ "note": "Every answer below is sourced, and you can go and check all of them. Where the honest answer is that two readings are defensible, the card says so rather than inventing a right one.",
  "cards": [
   {
    "id": "alopecia",
@@ -12,17 +12,77 @@
    "setup": "Galen opens his book on hair with the conditions he is going to treat. Two of his words are still in your dermatologist's vocabulary.",
    "question": "ἀλωπεκία — alopecia. Where does the word come from?",
    "options": [
-    {"label": "ἀλώπηξ, the fox", "standing": "yes",
-     "response": "The fox — proverbially prone to mange. Galen's readers would have heard the animal in the word."},
-    {"label": "ἀ- + λόπος, “without covering”", "standing": "no",
-     "response": "A reasonable guess from the alpha-privative, but no. It is the fox."},
-    {"label": "λευκός, “white”", "standing": "no",
-     "response": "That is λεύκη, “the white disease” — Galen's word a few lines later for conditions that blanch skin and hair, roughly vitiligo and its neighbours."},
-    {"label": "A physician named Alopekios", "standing": "no",
-     "response": "No such physician. It is the fox."}
+    {
+     "label": "ἀλώπηξ, the fox",
+     "standing": "yes",
+     "response": "The fox — proverbially prone to mange. Galen's readers would have heard the animal in the word."
+    },
+    {
+     "label": "ἀ- + λόπος, “without covering”",
+     "standing": "no",
+     "response": "A reasonable guess from the alpha-privative, but no. It is the fox."
+    },
+    {
+     "label": "λευκός, “white”",
+     "standing": "no",
+     "response": "That is λεύκη, “the white disease” — Galen's word a few lines later for conditions that blanch skin and hair, roughly vitiligo and its neighbours."
+    },
+    {
+     "label": "A physician named Alopekios",
+     "standing": "no",
+     "response": "No such physician. It is the fox."
+    }
    ],
    "reveal": "From ἀλώπηξ, the fox. And in the same passage: ὀφίασις, from ὄφις, the snake — for bald patches that creep in winding bands. Both survive in modern medicine, alopecia and the serpentine ophiasis pattern. You have just read two ancient Greek words that your doctor still uses.",
-   "links": [{"label": "the drafted preface", "href": "translations/chunk.html?id=cml-1-1"}]
+   "links": [
+    {
+     "label": "the drafted preface",
+     "href": "translations/chunk.html?id=cml-1-1"
+    }
+   ]
+  },
+  {
+   "id": "pharmakon",
+   "kind": "guess",
+   "eyebrow": "Galen · On the Composition of Drugs According to Places · Kühn XII",
+   "setup": "Galen is describing a salve he makes for scalp complaints, and a substitution he tried.",
+   "greek": "ἔμιξα δέ ποτε καὶ μέλιτος ἀντὶ τῆς κηρωτῆς ἐλάττονος ὄγκῳ τε καὶ σταθμῷ, καὶ οὐδενὶ χεῖρον ἐγένετο τὸ φάρμακον.",
+   "translit": "…kai oudeni cheiron egeneto to pharmakon.",
+   "gloss": "“I once mixed in honey instead of the wax salve, less in bulk and in weight, and the pharmakon was none the worse for it.”",
+   "question": "What is τὸ φάρμακον here?",
+   "options": [
+    {
+     "label": "The preparation he is making",
+     "standing": "yes",
+     "response": "Yes — the ointment in the pot. He is telling you a substitution worked."
+    },
+    {
+     "label": "A poison",
+     "standing": "no",
+     "response": "The word can mean that elsewhere. It cannot mean it here: he is putting honey in it and applying it to a patient's head."
+    },
+    {
+     "label": "A magical potion",
+     "standing": "no",
+     "response": "Nothing magical is in view. The neighbouring sentences are about shelf life and weights."
+    },
+    {
+     "label": "A sacred or initiatory drug",
+     "standing": "no",
+     "response": "No. Two lines later he notes that some preparations are still usable after twenty or thirty years, which is a remark about a store cupboard."
+    }
+   ],
+   "reveal": "φάρμακον is the ordinary word for a made-up preparation — remedy, drug, and in other contexts poison. All three senses are real, and the sentence decides which one is in play, every time.\n\nYou can count this rather than argue about it, and so can you — the command is in the link below. In this one work the stem φαρμακ- appears 1,262 times, almost always meaning the thing he compounds and applies. When Galen means specifically deadly he reaches for other words: δηλητήριον four times, θανάσιμος seven. If φάρμακον by itself carried the sinister sense, he would not have needed them — and he would not be telling you your φάρμακον is still fine after twenty years on the shelf.\n\nThis is the single most useful habit you can take away: a word with a range does not have a secret true meaning. It has a use in a sentence, and the sentence is checkable.",
+   "links": [
+    {
+     "label": "the drug book in the catalogue",
+     "href": "library.html?work=tlg076"
+    },
+    {
+     "label": "count it yourself: tools/count_stem.py",
+     "href": "https://github.com/posix4e/pergamap/blob/main/tools/count_stem.py"
+    }
+   ]
   },
   {
    "id": "do-no-harm",
@@ -34,16 +94,64 @@
    "gloss": "“to help — or at least to do no harm”",
    "question": "Where is this famous line actually from?",
    "options": [
-    {"label": "The Hippocratic Oath", "standing": "no",
-     "response": "Almost everyone says this, and it is wrong. The phrase “first, do no harm” is not in the Oath at all."},
-    {"label": "Hippocrates, Epidemics I", "standing": "yes",
-     "response": "Correct. And you can see Galen quoting rather than paraphrasing: he keeps the Ionic form ὠφελέειν instead of his own Attic ὠφελεῖν. The dialect is the fingerprint of a quotation."},
-    {"label": "Galen coined it himself", "standing": "no",
-     "response": "No — and the Ionic dialect form proves it. Galen wrote Attic; ὠφελέειν is his source's spelling, not his."},
-    {"label": "The Latin of Kühn's edition", "standing": "no",
-     "response": "The Latin is a 19th-century facing translation. The phrase is Greek and much older."}
+    {
+     "label": "The Hippocratic Oath",
+     "standing": "no",
+     "response": "Almost everyone says this, and it is wrong. The phrase “first, do no harm” is not in the Oath at all."
+    },
+    {
+     "label": "Hippocrates, Epidemics I",
+     "standing": "yes",
+     "response": "Correct. And you can see Galen quoting rather than paraphrasing: he keeps the Ionic form ὠφελέειν instead of his own Attic ὠφελεῖν. The dialect is the fingerprint of a quotation."
+    },
+    {
+     "label": "Galen coined it himself",
+     "standing": "no",
+     "response": "No — and the Ionic dialect form proves it. Galen wrote Attic; ὠφελέειν is his source's spelling, not his."
+    },
+    {
+     "label": "The Latin of Kühn's edition",
+     "standing": "no",
+     "response": "The Latin is a 19th-century facing translation. The phrase is Greek and much older."
+    }
    ],
    "reveal": "Epidemics I — not the Oath. This is the sort of claim that circulates for centuries because nobody checks the text. You just checked the text."
+  },
+  {
+   "id": "which-greek",
+   "kind": "guess",
+   "eyebrow": "What people mean when they say “the Greek”",
+   "setup": "Galen wrote in the second century. No copy in his hand survives, and neither does any ancient one. Almost every quotation of Galen you will ever see traces back to a single printed source.",
+   "question": "When someone says “the Greek text of Galen says X,” what are they almost always quoting?",
+   "options": [
+    {
+     "label": "Kühn's printed edition of 1821–33",
+     "standing": "yes",
+     "response": "Correct. Twenty volumes, Greek with a facing Latin translation, and for most of the corpus it has still never been replaced. It is a free download today."
+    },
+    {
+     "label": "An ancient manuscript",
+     "standing": "no",
+     "response": "None survives from antiquity. The oldest Greek witnesses are medieval copies of copies."
+    },
+    {
+     "label": "Galen's own manuscript",
+     "standing": "no",
+     "response": "Long gone — and he tells us himself that a great deal of his library burned in Rome in 192."
+    },
+    {
+     "label": "A modern critical edition",
+     "standing": "defensible",
+     "response": "Sometimes, and where one exists it is better. But the Corpus Medicorum Graecorum has only reached part of Galen after a century of work. For most of the corpus, Kühn is still what there is."
+    }
+   ],
+   "reveal": "So the honest question to ask of any claim about “the Greek” is: which Greek, edited by whom, from which manuscripts, and how sure was the editor?\n\nThat is not scepticism for its own sake. It is why this site pins the exact digital source and commit behind every passage it publishes, and records where two traditions agree and where nobody has checked. A quotation with no edition behind it is a quotation of nothing in particular.",
+   "links": [
+    {
+     "label": "how a passage is pinned here",
+     "href": "translations/chunk.html?id=cml-1-1"
+    }
+   ]
   },
   {
    "id": "kairos",
@@ -55,17 +163,34 @@
    "gloss": "“Life is short, the art long, … experience treacherous, judgement hard.”",
    "question": "ὁ καιρὸς ὀξύς. kairos is the fit or critical moment; oxys is “sharp, swift, acute.” What does the phrase mean here?",
    "options": [
-    {"label": "The decisive moment is acute", "standing": "defensible",
-     "response": "Defensible, and the phrase will bear it. But Galen, expounding his own lemma, does not take it this way."},
-    {"label": "Opportunity is fleeting", "standing": "received",
-     "response": "This is the received English — Jones gives “opportunity fleeting” in the Loeb. A temporal reading: the window is short."},
-    {"label": "The time is narrow", "standing": "received",
-     "response": "Also temporal, and this is exactly what Ḥunayn ibn Isḥāq wrote in 9th-century Baghdad: الوقت ضيّق, al-waqt ḍayyiq. He was a physician himself, and he took oxys of scarcity."},
-    {"label": "The crisis is dangerous", "standing": "no",
-     "response": "oxys can mean “acute” of a disease, but κρίσις is its own clause here — and the danger word, σφαλερή, is attached to πεῖρα, experience."}
+    {
+     "label": "The decisive moment is acute",
+     "standing": "defensible",
+     "response": "Defensible, and the phrase will bear it. But Galen, expounding his own lemma, does not take it this way."
+    },
+    {
+     "label": "Opportunity is fleeting",
+     "standing": "received",
+     "response": "This is the received English — Jones gives “opportunity fleeting” in the Loeb. A temporal reading: the window is short."
+    },
+    {
+     "label": "The time is narrow",
+     "standing": "received",
+     "response": "Also temporal, and this is exactly what Ḥunayn ibn Isḥāq wrote in 9th-century Baghdad: الوقت ضيّق, al-waqt ḍayyiq. He was a physician himself, and he took oxys of scarcity."
+    },
+    {
+     "label": "The crisis is dangerous",
+     "standing": "no",
+     "response": "oxys can mean “acute” of a disease, but κρίσις is its own clause here — and the danger word, σφαλερή, is attached to πεῖρα, experience."
+    }
    ],
    "reveal": "There is no single right answer, and that is the lesson. The phrase is genuinely ambiguous between “the moment is sharp” and “the time is short.” Galen settles it for himself: expounding the lemma he calls the kairos ὀλιγοχρόνιον — “of brief duration,” and therefore hard to seize — and says it is called “sharp” only because of the flux of the material the art works on. The received English and a ninth-century Arabic physician independently agree with him.\n\nOr so we published. That turned out to be wrong, and the next card is why.",
-   "links": [{"label": "the whole verse, both witnesses", "href": "translations/aphorisms-1-1.html"}]
+   "links": [
+    {
+     "label": "the whole verse, both witnesses",
+     "href": "translations/aphorisms-1-1.html"
+    }
+   ]
   },
   {
    "id": "retraction",
@@ -74,19 +199,73 @@
    "setup": "Here is the argument we ran. The Greek is ambiguous. Ḥunayn's Arabic reads it temporally — “the time is narrow.” Galen's own commentary reads it temporally — ὀλιγοχρόνιον, “of brief duration.” Two independent witnesses, arriving separately at the same construal. Strong.",
    "question": "It is not strong. What is wrong with it?",
    "options": [
-    {"label": "Ḥunayn was translating the commentary, so he had Galen's gloss in front of him", "standing": "yes",
-     "response": "Exactly right. What Ḥunayn rendered into Arabic was Galen's commentary — in our own copy the lemma is followed immediately by قال جالينوس, and inside the exposition he translates Galen's gloss too. He chose “narrow” in the verse because Galen's explanation of the word was on the page in front of him. The two are one witness, not two."},
-    {"label": "Ḥunayn's Arabic is too late to matter", "standing": "no",
-     "response": "Not the flaw. A ninth-century version can be excellent evidence — sometimes better than a later Greek manuscript. Lateness is not the problem here; dependence is."},
-    {"label": "Galen is not a reliable reader of Hippocrates", "standing": "no",
-     "response": "He is in fact our best ancient reader of Hippocrates. The problem is not his reliability."},
-    {"label": "The Greek text is corrupt at this point", "standing": "no",
-     "response": "Nothing suggests that. Both witnesses read ὀξύς; nobody is proposing a different Greek word."}
+    {
+     "label": "Ḥunayn was translating the commentary, so he had Galen's gloss in front of him",
+     "standing": "yes",
+     "response": "Exactly right. What Ḥunayn rendered into Arabic was Galen's commentary — in our own copy the lemma is followed immediately by قال جالينوس, and inside the exposition he translates Galen's gloss too. He chose “narrow” in the verse because Galen's explanation of the word was on the page in front of him. The two are one witness, not two."
+    },
+    {
+     "label": "Ḥunayn's Arabic is too late to matter",
+     "standing": "no",
+     "response": "Not the flaw. A ninth-century version can be excellent evidence — sometimes better than a later Greek manuscript. Lateness is not the problem here; dependence is."
+    },
+    {
+     "label": "Galen is not a reliable reader of Hippocrates",
+     "standing": "no",
+     "response": "He is in fact our best ancient reader of Hippocrates. The problem is not his reliability."
+    },
+    {
+     "label": "The Greek text is corrupt at this point",
+     "standing": "no",
+     "response": "Nothing suggests that. Both witnesses read ὀξύς; nobody is proposing a different Greek word."
+    }
    ],
    "reveal": "The convergence we published was a translator being consistent with himself.\n\nThe retraction is on the site, next to the passage, rather than quietly deleted — because the mistake is more instructive than the passage. It is also the difference between two things worth keeping apart: a variant (the Arabic implies a different Greek word) and a construal (the Greek is not in doubt; this is how someone took it). This was the second kind, and we dressed it up as the first.",
    "links": [
-    {"label": "the retraction in full", "href": "translations/aphorisms-1-1.html#notes"},
-    {"label": "why the distinction matters", "href": "https://github.com/posix4e/pergamap/blob/main/HARNESS.md#the-witness-protocol"}
+    {
+     "label": "the retraction in full",
+     "href": "translations/aphorisms-1-1.html#notes"
+    },
+    {
+     "label": "why the distinction matters",
+     "href": "https://github.com/posix4e/pergamap/blob/main/HARNESS.md#the-witness-protocol"
+    }
+   ]
+  },
+  {
+   "id": "nobody-hid-it",
+   "kind": "guess",
+   "eyebrow": "The state of the corpus · data/works.json",
+   "setup": "Galen is the largest surviving author of Greco-Roman antiquity — something like a tenth of all Greek literature that comes down to us from before 350. A great deal of him has never been put into English.",
+   "question": "Why is so much of Galen still untranslated?",
+   "options": [
+    {
+     "label": "Nobody has done the work",
+     "standing": "yes",
+     "response": "This is the answer, and it is boring. Translating a technical ancient corpus is slow, unglamorous, and barely rewarded. There is no shortage of will, only of funded years."
+    },
+    {
+     "label": "It was suppressed",
+     "standing": "no",
+     "response": "By whom, and how? Kühn's Greek has been a free download for years. Nothing is being kept from you — it is simply in a language almost nobody reads, and no one has been paid to change that."
+    },
+    {
+     "label": "The texts are lost",
+     "standing": "no",
+     "response": "Much is lost, but not this. These are works we have, printed and sitting there, untranslated."
+    },
+    {
+     "label": "It is considered too dangerous",
+     "standing": "no",
+     "response": "It is considered mildly tedious. That is a much better explanation of the world than most, and it is usually the right one."
+    }
+   ],
+   "reveal": "This site is a map of exactly that. A hundred and eight works, with what is known about each and — the part that matters — how well it is known. For ninety-three of them, nobody has yet consulted a single source to check whether an English translation exists. Two rest on someone having actually inspected the translation.\n\nWe say so on every row, because “we have not checked” and “it does not exist” are different claims, and the gap between them is where confident nonsense grows.\n\nAn absence of translation is a labour shortage. It is almost never a secret.",
+   "links": [
+    {
+     "label": "the map, with its own uncertainty marked",
+     "href": "library.html"
+    }
    ]
   }
  ]
