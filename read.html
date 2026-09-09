@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Read it yourself — Pergamap</title>
+<title>You can just read it — Pergamap</title>
 <meta name="description" content="Four questions about two passages of Galen. Guess before you look. Five minutes, no Greek required, and one of the answers is a mistake this site published and had to withdraw.">
-<meta property="og:title" content="Read it yourself — Pergamap">
+<meta property="og:title" content="You can just read it — Pergamap">
 <meta property="og:description" content="Don't take anyone's word for what the Greek says. Look at it.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Pergamap">
@@ -13,7 +13,7 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="decode">
 <header class="site">
   <a class="brand" href="index.html">Perga<span>map</span></a>
   <nav aria-label="Primary">
@@ -26,7 +26,9 @@
   </nav>
 </header>
 <main>
+  <p id="rail" hidden><span class="step"></span><span class="bar"><i></i></span><span class="count"></span></p>
   <div id="run"></div>
+  <section id="decoded" hidden></section>
   <noscript><p class="error">This page needs JavaScript. The questions and their sources are plain JSON: <a href="data/cards/aph-1-1.json">data/cards/aph-1-1.json</a>.</p></noscript>
 </main>
 <footer class="site">

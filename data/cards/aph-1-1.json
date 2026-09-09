@@ -1,9 +1,9 @@
 {
  "schema_version": 1,
  "id": "aph-1-1",
- "title": "Life is short",
- "lead": "Seven questions about Galen and the texts he comes down to us in. Guess before you look — being wrong is the point, and it takes about eight minutes.",
- "note": "Every answer below is sourced, and you can go and check all of them. Where the honest answer is that two readings are defensible, the card says so rather than inventing a right one.",
+ "title": "You can just read it",
+ "lead": "Eight passes over a two-thousand-year-old book about hair loss, by a doctor with no patience for people who don't check. Guess first, then look. You keep every word you decode.",
+ "note": "Nothing here is hidden from you. It is in a language almost nobody reads — a different problem, and a fixable one.",
  "cards": [
   {
    "id": "alopecia",
@@ -38,6 +38,23 @@
     {
      "label": "the drafted preface",
      "href": "translations/chunk.html?id=cml-1-1"
+    }
+   ],
+   "words": [
+    {
+     "gr": "ἀλώπηξ",
+     "tr": "alōpēx",
+     "en": "fox"
+    },
+    {
+     "gr": "ἀλωπεκία",
+     "tr": "alōpekia",
+     "en": "hair loss"
+    },
+    {
+     "gr": "ὀφίασις",
+     "tr": "ophiasis",
+     "en": "snake-pattern baldness"
     }
    ]
   },
@@ -82,6 +99,79 @@
      "label": "count it yourself: tools/count_stem.py",
      "href": "https://github.com/posix4e/pergamap/blob/main/tools/count_stem.py"
     }
+   ],
+   "words": [
+    {
+     "gr": "φάρμακον",
+     "tr": "pharmakon",
+     "en": "preparation · drug · poison"
+    },
+    {
+     "gr": "δηλητήριον",
+     "tr": "dēlētērion",
+     "en": "poison, properly"
+    },
+    {
+     "gr": "θανάσιμος",
+     "tr": "thanasimos",
+     "en": "deadly"
+    }
+   ]
+  },
+  {
+   "id": "the-control",
+   "kind": "guess",
+   "eyebrow": "Galen · On the Composition of Drugs According to Places, Book 1",
+   "setup": "Galen has a remedy for falling hair. It seems to work: he applies it, the hair comes back. Other physicians in Rome are selling the same kind of thing and taking the credit. He is not satisfied.",
+   "greek": "ἐντεῦθεν οὖν ὁρμηθεὶς ἐγὼ τὴν αὐτὴν θεραπείαν ἐφ’ ἑτέρων ποιησάμενος ἀνέμεινα θεάσασθαι χωρὶς τῶν ἐπιτιθεμένων τῇ κεφαλῇ φαρμάκων τὸ γενησόμενον.",
+   "translit": "…anemeina theasasthai chōris tōn epitithemenōn tē kephalē pharmakōn to genēsomenon.",
+   "gloss": "“…I waited to see what would happen without the preparations applied to the head.”",
+   "question": "What is he doing in that sentence?",
+   "options": [
+    {
+     "label": "Withholding the drug to find out whether it was doing anything",
+     "standing": "yes",
+     "response": "Exactly that. He treated the underlying condition, then deliberately left the head untreated on some patients — and waited. If the hair came back anyway, the famous remedy was taking credit for the body's own work."
+    },
+    {
+     "label": "Running out of the ingredients",
+     "standing": "no",
+     "response": "No. He is choosing not to apply it, on purpose, to find something out."
+    },
+    {
+     "label": "Treating patients who refused the drug",
+     "standing": "no",
+     "response": "The initiative is his. ἐγώ is doing real work in that sentence — he is telling you this was his idea."
+    },
+    {
+     "label": "Describing what a rival did badly",
+     "standing": "no",
+     "response": "He does plenty of that elsewhere. Here he is describing his own procedure, and it is better than theirs."
+    }
+   ],
+   "reveal": "A second-century physician withheld a treatment in order to see whether it was the treatment doing the work. No apparatus, no statistics, no word for what he was doing — just the refusal to be impressed by his own success.\n\nThat is the actual magic of Galen, and it is not mystical in the least. He is the most practical man in the room: he tries things, he watches what happens, he says when he was wrong, and he is permanently irritated by colleagues who skip that part. Elsewhere he complains that using drugs χωρὶς μεθόδου — without method — does not merely fail to help but often does harm, and that some of them leave patients permanently bald.\n\nHe would have had absolutely no patience for being quoted by people who have not read him.",
+   "words": [
+    {
+     "gr": "ἀναμένω",
+     "tr": "anamenō",
+     "en": "I wait, hold off"
+    },
+    {
+     "gr": "χωρὶς μεθόδου",
+     "tr": "chōris methodou",
+     "en": "without method"
+    },
+    {
+     "gr": "βασανίζω",
+     "tr": "basanizō",
+     "en": "I test — as gold on a touchstone"
+    }
+   ],
+   "links": [
+    {
+     "label": "the preface, drafted",
+     "href": "translations/chunk.html?id=cml-1-1"
+    }
    ]
   },
   {
@@ -115,41 +205,68 @@
      "response": "The Latin is a 19th-century facing translation. The phrase is Greek and much older."
     }
    ],
-   "reveal": "Epidemics I — not the Oath. This is the sort of claim that circulates for centuries because nobody checks the text. You just checked the text."
+   "reveal": "Epidemics I — not the Oath. This is the sort of claim that circulates for centuries because nobody checks the text. You just checked the text.",
+   "words": [
+    {
+     "gr": "ὠφελεῖν",
+     "tr": "ōphelein",
+     "en": "to help"
+    },
+    {
+     "gr": "βλάπτειν",
+     "tr": "blaptein",
+     "en": "to harm"
+    }
+   ]
   },
   {
-   "id": "which-greek",
+   "id": "the-fire",
    "kind": "guess",
-   "eyebrow": "What people mean when they say “the Greek”",
-   "setup": "Galen wrote in the second century. No copy in his hand survives, and neither does any ancient one. Almost every quotation of Galen you will ever see traces back to a single printed source.",
-   "question": "When someone says “the Greek text of Galen says X,” what are they almost always quoting?",
+   "eyebrow": "Rome, 192 CE — and a monastery in Thessaloniki, 2005",
+   "setup": "A fire on the Sacred Way took the storehouses by the Temple of Peace. Galen kept his library there: his own unpublished drafts, his instruments, recipes he had spent thirty years collecting from other physicians. All of it went. Afterwards he wrote a short book about how he managed not to be destroyed by losing it — Περὶ ἀλυπίας, on freedom from grief.",
+   "greek": "Περὶ ἀλυπίας",
+   "translit": "Peri alypias",
+   "gloss": "“On freedom from grief” — a man explaining how he coped with losing his life's work",
+   "question": "That book then disappeared for roughly seven hundred years. How did we get it back?",
    "options": [
     {
-     "label": "Kühn's printed edition of 1821–33",
+     "label": "A PhD student found it while waiting for some microfilms",
      "standing": "yes",
-     "response": "Correct. Twenty volumes, Greek with a facing Latin translation, and for most of the corpus it has still never been replaced. It is a free download today."
+     "response": "Yes. January 2005, the Vlatadon monastery in Thessaloniki. Antoine Pietrobelli was there to consult microfilms for his thesis, and while he waited for someone to fetch them he picked up the library's catalogue to pass the time. The catalogue had been published in 1918."
     },
     {
-     "label": "An ancient manuscript",
+     "label": "It was suppressed and later recovered",
      "standing": "no",
-     "response": "None survives from antiquity. The oldest Greek witnesses are medieval copies of copies."
+     "response": "Nobody suppressed it. Nobody was even guarding it. It sat in a monastery library that had published a catalogue of its own holdings, and for eighty-seven years no one opened the catalogue at that page."
     },
     {
-     "label": "Galen's own manuscript",
+     "label": "It is still lost — we only know the title",
      "standing": "no",
-     "response": "Long gone — and he tells us himself that a great deal of his library burned in Rome in 192."
+     "response": "True until 2005. Galen lists it in his own catalogue of his works, so we always knew it had existed; the last trace of anyone reading it was in the thirteenth century."
     },
     {
-     "label": "A modern critical edition",
+     "label": "Only an Arabic version survives",
      "standing": "defensible",
-     "response": "Sometimes, and where one exists it is better. But the Corpus Medicorum Graecorum has only reached part of Galen after a century of work. For most of the corpus, Kühn is still what there is."
+     "response": "That was the state of things for centuries — the last trace was extracts translated into Arabic by a thirteenth-century physician, and written down in Hebrew characters. Then the Greek turned up."
     }
    ],
-   "reveal": "So the honest question to ask of any claim about “the Greek” is: which Greek, edited by whom, from which manuscripts, and how sure was the editor?\n\nThat is not scepticism for its own sake. It is why this site pins the exact digital source and commit behind every passage it publishes, and records where two traditions agree and where nobody has checked. A quotation with no edition behind it is a quotation of nothing in particular.",
+   "reveal": "Boredom, a 1918 catalogue, and a fifteenth-century manuscript nobody had read. The first edition was published in 2007.\n\nThis is what “lost” almost always means. Not hidden, not burned, not taken from you. Unread. Sitting in a building, in a language, catalogued, waiting.\n\nThere are more of these. That is the good news, and it is why the map on this site marks what nobody has checked rather than pretending the gaps are known.",
+   "words": [
+    {
+     "gr": "ἀλυπία",
+     "tr": "alypia",
+     "en": "freedom from grief"
+    },
+    {
+     "gr": "βιβλιοθήκη",
+     "tr": "bibliothēkē",
+     "en": "library"
+    }
+   ],
    "links": [
     {
-     "label": "how a passage is pinned here",
-     "href": "translations/chunk.html?id=cml-1-1"
+     "label": "what nobody has checked yet",
+     "href": "library.html"
     }
    ]
   },
@@ -189,6 +306,28 @@
     {
      "label": "the whole verse, both witnesses",
      "href": "translations/aphorisms-1-1.html"
+    }
+   ],
+   "words": [
+    {
+     "gr": "βίος",
+     "tr": "bios",
+     "en": "life"
+    },
+    {
+     "gr": "τέχνη",
+     "tr": "technē",
+     "en": "craft, skill"
+    },
+    {
+     "gr": "καιρός",
+     "tr": "kairos",
+     "en": "the critical moment"
+    },
+    {
+     "gr": "ὀξύς",
+     "tr": "oxys",
+     "en": "sharp · swift · acute"
     }
    ]
   },
@@ -230,41 +369,67 @@
      "label": "why the distinction matters",
      "href": "https://github.com/posix4e/pergamap/blob/main/HARNESS.md#the-witness-protocol"
     }
+   ],
+   "words": [
+    {
+     "gr": "ὀλιγοχρόνιον",
+     "tr": "oligochronion",
+     "en": "of brief duration"
+    }
    ]
   },
   {
-   "id": "nobody-hid-it",
+   "id": "false-opinions",
    "kind": "guess",
-   "eyebrow": "The state of the corpus · data/works.json",
-   "setup": "Galen is the largest surviving author of Greco-Roman antiquity — something like a tenth of all Greek literature that comes down to us from before 350. A great deal of him has never been put into English.",
-   "question": "Why is so much of Galen still untranslated?",
+   "eyebrow": "Galen · in the middle of a chapter about hair remedies",
+   "setup": "Galen breaks off from a discussion of poultices to complain about a claim he thinks is plainly false — that swellings are wonderfully dispersed by hot fomentation. Then he says why people go on believing it.",
+   "greek": "αἱ γάρ τοι ψευδεῖς δόξαι, προκαταλαμβάνουσαι τὰς ψυχὰς τῶν ἀνθρώπων, οὐ μόνον κωφοὺς, ἀλλὰ καὶ τυφλοὺς ἐργάζονται τῶν τοῖς ἄλλοις ἐναργῶς ὁρωμένων.",
+   "translit": "hai gar toi pseudeis doxai… ou monon kōphous, alla kai typhlous ergazontai…",
+   "gloss": "“For false beliefs, once they have taken hold of people's minds, make them not merely deaf but blind — to things that others see plainly.”",
+   "question": "When was that written?",
    "options": [
     {
-     "label": "Nobody has done the work",
+     "label": "The second century AD",
      "standing": "yes",
-     "response": "This is the answer, and it is boring. Translating a technical ancient corpus is slow, unglamorous, and barely rewarded. There is no shortage of will, only of funded years."
+     "response": "Yes — around 180 years after the birth of Christ, by a working doctor, in a technical manual about drug preparation, in the middle of an argument about hot compresses."
     },
     {
-     "label": "It was suppressed",
+     "label": "The Enlightenment",
      "standing": "no",
-     "response": "By whom, and how? Kühn's Greek has been a free download for years. Nothing is being kept from you — it is simply in a language almost nobody reads, and no one has been paid to change that."
+     "response": "It reads like it. It is roughly fifteen hundred years earlier."
     },
     {
-     "label": "The texts are lost",
+     "label": "A modern psychology paper",
      "standing": "no",
-     "response": "Much is lost, but not this. These are works we have, printed and sitting there, untranslated."
+     "response": "It would not be out of place in one. It is Galen, annoyed about poultices."
     },
     {
-     "label": "It is considered too dangerous",
+     "label": "Someone quoting Galen much later",
      "standing": "no",
-     "response": "It is considered mildly tedious. That is a much better explanation of the world than most, and it is usually the right one."
+     "response": "It is Galen himself, in his own book, in the same chapter as the recipes."
     }
    ],
-   "reveal": "This site is a map of exactly that. A hundred and eight works, with what is known about each and — the part that matters — how well it is known. For ninety-three of them, nobody has yet consulted a single source to check whether an English translation exists. Two rest on someone having actually inspected the translation.\n\nWe say so on every row, because “we have not checked” and “it does not exist” are different claims, and the gap between them is where confident nonsense grows.\n\nAn absence of translation is a labour shortage. It is almost never a secret.",
+   "reveal": "He is not describing a conspiracy. He is describing the ordinary way a confident claim, once lodged, stops you noticing what is in front of you — and his cure for it is the least glamorous thing imaginable. Withhold the drug. Look at what happens. Say so.\n\nNothing about the ancient world was being kept from you. The whole of it is sitting in libraries in languages almost nobody reads, and a hundred and eight works of this one man are catalogued on this site with ninety-three of them still unchecked by anybody, including us.\n\nThere was never a secret. There was a language. You just read some of it.",
+   "words": [
+    {
+     "gr": "ψευδὴς δόξα",
+     "tr": "pseudēs doxa",
+     "en": "a false belief"
+    },
+    {
+     "gr": "ἐναργής",
+     "tr": "energēs",
+     "en": "plainly visible"
+    }
+   ],
    "links": [
     {
-     "label": "the map, with its own uncertainty marked",
+     "label": "the hundred and eight, and what nobody has checked",
      "href": "library.html"
+    },
+    {
+     "label": "how to check us",
+     "href": "https://github.com/posix4e/pergamap/blob/main/CONTRIBUTING.md"
     }
    ]
   }

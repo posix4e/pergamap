@@ -580,3 +580,59 @@ button.choice:hover, button.choice:focus-visible { border-color: var(--accent); 
 .choice.shown .chip { float: right; margin-left: 0.6rem; }
 a.chip, button.chip { cursor: pointer; display: inline-block; margin: 0 0.4rem 0.4rem 0;
   border: 1px solid currentColor; background: none; text-decoration: none; }
+
+/* ── decode: the reading run, in its own skin ────────────────────────────────
+   Dark ground, one accent, monospace for the machine layer only. The Greek
+   stays in Garamond and stays large: the chrome is the terminal, the text is
+   the thing worth looking at, and the contrast between them is the whole idea.
+   Scoped to body.decode so the edition itself is untouched by any of it. */
+body.decode {
+  --bg: #0c0b0a; --bg2: #15130f; --text: #e7e1d4; --muted: #8b8172;
+  --border: #272320; --accent: #ff4a31; --accent-soft: #2a1410;
+  --good: #79d6b4; --good-soft: #0f241d; --warn: #e0a33a; --warn-soft: #241a09;
+  --none: #ff6a54; --none-soft: #2a1210; --unk: #8b8172; --unk-soft: #1b1815;
+  --decoded: #6fd3d3;
+  --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+  background: var(--bg); color: var(--text);
+}
+body.decode .site { background: transparent; border-color: var(--border); }
+body.decode .brand { color: var(--text); }
+
+/* the machine layer */
+body.decode .tag,
+body.decode #rail,
+body.decode #decoded .head,
+body.decode .choice .chip {
+  font-family: var(--mono); text-transform: uppercase; letter-spacing: 0.11em;
+  font-size: 0.68rem;
+}
+#rail { display: flex; align-items: center; gap: 0.9rem; color: var(--muted); margin: 0 0 2.2rem; }
+#rail[hidden], #decoded[hidden] { display: none; }  /* an explicit display beats the hidden attribute */
+#rail .bar { flex: 1; height: 1px; background: var(--border); position: relative; }
+#rail .bar i { position: absolute; inset: 0 auto 0 0; background: var(--accent); display: block; }
+body.decode .locus { border-top: none; padding-top: 0; }
+
+/* the text: the thing the chrome is pointing at */
+body.decode .grc, body.decode .ara { font-size: 1.42rem; line-height: 1.75; color: var(--text); }
+body.decode .pair { border-left: 2px solid var(--accent); padding-left: 1.3rem; margin: 1.6rem 0; }
+body.decode h2 { font-size: 1.5rem; }
+body.decode .notice { background: var(--bg2); border-left-color: var(--accent); }
+
+/* choices */
+body.decode button.choice { background: var(--bg2); color: var(--text); border-color: var(--border); }
+body.decode button.choice:hover, body.decode button.choice:focus-visible {
+  border-color: var(--accent); background: #1c1813;
+}
+body.decode .choice.shown { background: var(--bg2); border-color: var(--border); }
+
+/* vocabulary you keep */
+#decoded { margin: 2.4rem 0 0; border-top: 1px solid var(--border); padding-top: 1rem; }
+#decoded .head { color: var(--muted); margin: 0 0 0.7rem; }
+#decoded ul { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 0.45rem; }
+#decoded li {
+  border: 1px solid var(--border); border-radius: 6px; padding: 0.3rem 0.6rem;
+  background: var(--bg2); font-size: 0.86rem;
+}
+#decoded li b { color: var(--decoded); font-weight: 500; }
+#decoded li span { color: var(--muted); font-size: 0.8rem; margin-left: 0.4rem; }
+#decoded li.fresh { border-color: var(--decoded); }
