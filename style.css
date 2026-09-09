@@ -581,28 +581,12 @@ button.choice:hover, button.choice:focus-visible { border-color: var(--accent); 
 a.chip, button.chip { cursor: pointer; display: inline-block; margin: 0 0.4rem 0.4rem 0;
   border: 1px solid currentColor; background: none; text-decoration: none; }
 
-/* ── decode: the reading run, in its own skin ────────────────────────────────
-   Dark ground, one accent, monospace for the machine layer only. The Greek
-   stays in Garamond and stays large: the chrome is the terminal, the text is
-   the thing worth looking at, and the contrast between them is the whole idea.
-   Scoped to body.decode so the edition itself is untouched by any of it. */
-body.decode {
-  --bg: #0c0b0a; --bg2: #15130f; --text: #e7e1d4; --muted: #8b8172;
-  --border: #272320; --accent: #ff4a31; --accent-soft: #2a1410;
-  --good: #79d6b4; --good-soft: #0f241d; --warn: #e0a33a; --warn-soft: #241a09;
-  --none: #ff6a54; --none-soft: #2a1210; --unk: #8b8172; --unk-soft: #1b1815;
-  --decoded: #6fd3d3;
-  --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
-  background: var(--bg); color: var(--text);
-}
-body.decode .site { background: transparent; border-color: var(--border); }
-body.decode .brand { color: var(--text); }
-
-/* the machine layer */
-body.decode .tag,
-body.decode #rail,
-body.decode #decoded .head,
-body.decode .choice .chip {
+/* ── the reading run ─────────────────────────────────────────────────────────
+   The rail and the vocabulary strip are mechanics, not decoration: they belong
+   to both skins. Only the palette below is the hidden part. */
+:root { --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+  --decoded: #1c6f6f; }
+.tag, #rail, #decoded .head, .choice .chip {
   font-family: var(--mono); text-transform: uppercase; letter-spacing: 0.11em;
   font-size: 0.68rem;
 }
@@ -610,29 +594,50 @@ body.decode .choice .chip {
 #rail[hidden], #decoded[hidden] { display: none; }  /* an explicit display beats the hidden attribute */
 #rail .bar { flex: 1; height: 1px; background: var(--border); position: relative; }
 #rail .bar i { position: absolute; inset: 0 auto 0 0; background: var(--accent); display: block; }
-body.decode .locus { border-top: none; padding-top: 0; }
 
-/* the text: the thing the chrome is pointing at */
+#decoded { margin: 2.4rem 0 0; border-top: 1px solid var(--border); padding-top: 1rem; }
+#decoded .head { color: var(--muted); margin: 0 0 0.7rem; }
+#decoded ul { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 0.45rem; }
+#decoded li { border: 1px solid var(--border); border-radius: 6px;
+  background: var(--bg2); font-size: 0.86rem; }
+#decoded li button.key { display: block; width: 100%; text-align: left; cursor: pointer;
+  background: none; border: 0; padding: 0.3rem 0.6rem; font: inherit; color: inherit; }
+#decoded li button.key:hover, #decoded li button.key:focus-visible { color: var(--decoded); }
+#decoded li b { color: var(--decoded); font-weight: 500; }
+#decoded li span { color: var(--muted); font-size: 0.8rem; margin-left: 0.4rem; }
+#decoded li.fresh { border-color: var(--decoded); }
+#decoded .hint { margin-top: 1.1rem; color: var(--decoded); }
+
+/* ── decode: the skin underneath ─────────────────────────────────────────────
+   No control offers this anywhere. It is reached by typing one of the Greek
+   words the reading run teaches — see assets/js/decode.js. Dark ground, one
+   accent, and the Greek left in Garamond, because the chrome is the terminal
+   and the text is the thing worth looking at. */
+body.decode {
+  --bg: #0c0b0a; --bg2: #15130f; --text: #e7e1d4; --muted: #8b8172;
+  --border: #272320; --accent: #ff4a31; --accent-soft: #2a1410;
+  --good: #79d6b4; --good-soft: #0f241d; --warn: #e0a33a; --warn-soft: #241a09;
+  --none: #ff6a54; --none-soft: #2a1210; --unk: #8b8172; --unk-soft: #1b1815;
+  --decoded: #6fd3d3;
+  background: var(--bg); color: var(--text);
+}
+body.decode .site { background: transparent; border-color: var(--border); }
+body.decode .brand { color: var(--text); }
+body.decode .locus { border-top: none; padding-top: 0; }
 body.decode .grc, body.decode .ara { font-size: 1.42rem; line-height: 1.75; color: var(--text); }
 body.decode .pair { border-left: 2px solid var(--accent); padding-left: 1.3rem; margin: 1.6rem 0; }
-body.decode h2 { font-size: 1.5rem; }
 body.decode .notice { background: var(--bg2); border-left-color: var(--accent); }
-
-/* choices */
 body.decode button.choice { background: var(--bg2); color: var(--text); border-color: var(--border); }
 body.decode button.choice:hover, body.decode button.choice:focus-visible {
   border-color: var(--accent); background: #1c1813;
 }
 body.decode .choice.shown { background: var(--bg2); border-color: var(--border); }
+body.decode table tbody tr:hover { background: #17140f; }
 
-/* vocabulary you keep */
-#decoded { margin: 2.4rem 0 0; border-top: 1px solid var(--border); padding-top: 1rem; }
-#decoded .head { color: var(--muted); margin: 0 0 0.7rem; }
-#decoded ul { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 0.45rem; }
-#decoded li {
-  border: 1px solid var(--border); border-radius: 6px; padding: 0.3rem 0.6rem;
-  background: var(--bg2); font-size: 0.86rem;
+/* the only thing that ever mentions it, and only after you have done it */
+#decode-note {
+  position: fixed; left: 50%; bottom: 1.6rem; transform: translateX(-50%);
+  font-family: var(--mono); font-size: 0.7rem; text-transform: uppercase;
+  letter-spacing: 0.11em; color: var(--muted); background: var(--bg2);
+  border: 1px solid var(--border); border-radius: 99px; padding: 0.4rem 0.9rem; margin: 0;
 }
-#decoded li b { color: var(--decoded); font-weight: 500; }
-#decoded li span { color: var(--muted); font-size: 0.8rem; margin-left: 0.4rem; }
-#decoded li.fresh { border-color: var(--decoded); }

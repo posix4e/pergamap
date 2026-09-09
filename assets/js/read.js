@@ -74,9 +74,15 @@ function renderDecoded(freshFrom) {
   for (const word of decoded) {
     const fresh = (freshFrom || []).some((w) => w.gr === word.gr);
     const item = list.appendChild(node("li", fresh ? "fresh" : ""));
-    const glyph = item.appendChild(node("b", "", word.gr));
+    const button = item.appendChild(node("button", "key"));
+    button.type = "button";
+    button.title = word.tr;
+    const glyph = button.appendChild(node("b", "", word.gr));
     glyph.lang = "grc";
-    item.appendChild(node("span", "", word.en));
+    button.appendChild(node("span", "", word.en));
+    button.addEventListener("click", () => {
+      document.dispatchEvent(new CustomEvent("pergamap:decode"));
+    });
   }
 }
 
@@ -164,6 +170,9 @@ function renderEnd() {
     a.href = href;
   }
   renderDecoded([]);
+  // The only place the second skin is ever mentioned, and only to someone who
+  // has earned the words that open it.
+  decodedBox.appendChild(node("p", "head hint", "the words are keys. tap one — or type one, anywhere on this site."));
 }
 
 async function main() {
