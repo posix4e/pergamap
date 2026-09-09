@@ -2,7 +2,7 @@
  "schema_version": 1,
  "id": "aph-1-1",
  "title": "You can just read it",
- "lead": "Eight passes over a two-thousand-year-old book about hair loss, by a doctor with no patience for people who don't check. Guess first, then look. You keep every word you decode.",
+ "lead": "Nine passes over a two-thousand-year-old book about hair loss, by a doctor with no patience for people who don't check. Guess first, then look. You keep every word you decode.",
  "note": "Nothing here is hidden from you. It is in a language almost nobody reads — a different problem, and a fixable one.",
  "cards": [
   {
@@ -55,6 +55,62 @@
      "gr": "ὀφίασις",
      "tr": "ophiasis",
      "en": "snake-pattern baldness"
+    }
+   ]
+  },
+  {
+   "id": "the-feather",
+   "kind": "guess",
+   "eyebrow": "Galen · on depilatories · Kühn XII",
+   "setup": "Galen sorts hair-removal preparations into three strengths: ones that merely thin the hair, ones properly called ψίλωθρα, and ones that take it off altogether. Which leaves a practical problem — how do you know how strong the batch in front of you actually is?",
+   "greek": "τοῦτο δὲ ἔσται φανερὸν εἰ πτερὸν καθιέντι σοι εἰς τὸ ψίλωθρον ἀπομαδίσει συντόμως.",
+   "translit": "…ei pteron kathienti soi eis to psilōthron apomadisei syntomōs.",
+   "gloss": "“…if, when you dip a feather into the depilatory, it strips bare quickly.”",
+   "question": "So what is the feather for?",
+   "options": [
+    {
+     "label": "Testing the strength of the batch before it goes near a person",
+     "standing": "yes",
+     "response": "A potency assay, with a feather. If the barbs come away fast, the preparation is strong; if not, it is weak. Cheap, repeatable, and nobody gets burnt finding out."
+    },
+    {
+     "label": "Applying the preparation",
+     "standing": "no",
+     "response": "You would use it that way too, but that is not what this sentence is doing. He is telling you how something will become φανερόν — clear, evident. It is a test."
+    },
+    {
+     "label": "Stirring the mixture",
+     "standing": "no",
+     "response": "Nothing here is about mixing. The feather goes in and comes out changed, and the change is the reading."
+    },
+    {
+     "label": "A ritual element",
+     "standing": "no",
+     "response": "Galen is the last man in antiquity you would go to for that. He wants to know how strong the batch is."
+    }
+   ],
+   "reveal": "He is standing in a workshop wondering whether the jar in front of him is too strong for a customer's leg, and he has worked out that a feather is a leg he does not have to apologise to.\n\nThis is the texture of the corpus once you are actually in it. Not doctrine — a hundred small practical solutions by a man who would rather find out than assume. Elsewhere in the same book: crush a hundred green walnuts between the Kalends and the Ides of July, because that is when they are right. Grind mouse droppings with vinegar and smear it on. Lice, he notes, sometimes appear on the head all at once.\n\nNone of it was ever hidden. It is just that reading it takes a language, and almost nobody has.",
+   "words": [
+    {
+     "gr": "ψίλωθρον",
+     "tr": "psilothron",
+     "en": "a depilatory"
+    },
+    {
+     "gr": "πτερόν",
+     "tr": "pteron",
+     "en": "feather"
+    },
+    {
+     "gr": "φανερός",
+     "tr": "phaneros",
+     "en": "clear, evident"
+    }
+   ],
+   "links": [
+    {
+     "label": "the book this is from",
+     "href": "library.html?work=tlg076"
     }
    ]
   },
@@ -274,34 +330,34 @@
    "id": "kairos",
    "kind": "guess",
    "eyebrow": "Hippocrates, Aphorisms i.1, with Galen's commentary · Kühn XVIIb 345",
-   "setup": "The most famous sentence in Greek medicine. Four clauses are uncontroversial. The third is not.",
+   "setup": "The most famous sentence in Greek medicine. Four of its clauses are uncontroversial. The third is not.",
    "greek": "Ὁ βίος βραχύς, ἡ δὲ τέχνη μακρή, ὁ δὲ καιρὸς ὀξύς, ἡ δὲ πεῖρα σφαλερή, ἡ δὲ κρίσις χαλεπή.",
    "translit": "ho bios brachys, hē de technē makrē, ho de kairos oxys…",
    "gloss": "“Life is short, the art long, … experience treacherous, judgement hard.”",
-   "question": "ὁ καιρὸς ὀξύς. kairos is the fit or critical moment; oxys is “sharp, swift, acute.” What does the phrase mean here?",
+   "question": "ὁ καιρὸς ὀξύς. kairos is the fit or critical moment; oxys is “sharp, swift, acute.” What does it mean here?",
    "options": [
     {
      "label": "The decisive moment is acute",
      "standing": "defensible",
-     "response": "Defensible, and the phrase will bear it. But Galen, expounding his own lemma, does not take it this way."
+     "response": "Defensible — the phrase will bear it. But Galen, expounding his own lemma, does not take it this way."
     },
     {
      "label": "Opportunity is fleeting",
      "standing": "received",
-     "response": "This is the received English — Jones gives “opportunity fleeting” in the Loeb. A temporal reading: the window is short."
+     "response": "The received English. Jones gives “opportunity fleeting” in the Loeb: the window is short."
     },
     {
      "label": "The time is narrow",
      "standing": "received",
-     "response": "Also temporal, and this is exactly what Ḥunayn ibn Isḥāq wrote in 9th-century Baghdad: الوقت ضيّق, al-waqt ḍayyiq. He was a physician himself, and he took oxys of scarcity."
+     "response": "Also temporal — and exactly what Ḥunayn wrote in ninth-century Baghdad: الوقت ضيّق, al-waqt ḍayyiq, “the time is narrow.”"
     },
     {
      "label": "The crisis is dangerous",
      "standing": "no",
-     "response": "oxys can mean “acute” of a disease, but κρίσις is its own clause here — and the danger word, σφαλερή, is attached to πεῖρα, experience."
+     "response": "oxys does mean “acute” of a disease. But κρίσις has its own clause here, and the danger word σφαλερή is attached to πεῖρα."
     }
    ],
-   "reveal": "There is no single right answer, and that is the lesson. The phrase is genuinely ambiguous between “the moment is sharp” and “the time is short.” Galen settles it for himself: expounding the lemma he calls the kairos ὀλιγοχρόνιον — “of brief duration,” and therefore hard to seize — and says it is called “sharp” only because of the flux of the material the art works on. The received English and a ninth-century Arabic physician independently agree with him.\n\nOr so we published. That turned out to be wrong, and the next card is why.",
+   "reveal": "No single right answer, and that is the lesson: the phrase is genuinely poised between “the moment is sharp” and “the time is short.” Galen settles it for himself — expounding the lemma he calls the kairos ὀλιγοχρόνιον, of brief duration, and therefore hard to seize.\n\nThe received English agrees with him. So does a ninth-century Arabic physician, independently.\n\nOr so we published. The next card is why that was wrong.",
    "links": [
     {
      "label": "the whole verse, both witnesses",
