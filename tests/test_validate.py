@@ -388,5 +388,95 @@ class ValidatorTests(unittest.TestCase):
             )
 
 
+
+class CardTests(unittest.TestCase):
+    """Every option must earn its place, and no card may be unanswerable."""
+
+    def setUp(self):
+        self.temp = tempfile.TemporaryDirectory()
+        self.root = pathlib.Path(self.temp.name)
+        (self.root / "data" / "cards").mkdir(parents=True)
+        self.deck = {
+            "schema_version": 1,
+            "id": "sample",
+            "cards": [
+                {
+                    "id": "kairos",
+                    "eyebrow": "Hippocrates, Aphorisms i.1",
+                    "question": "What does the phrase mean here?",
+                    "reveal": "There is no single right answer, and that is the lesson.",
+                    "options": [
+                        {"label": "Opportunity is fleeting", "standing": "received",
+                         "response": "The received English; Jones gives this in the Loeb."},
+                        {"label": "The crisis is dangerous", "standing": "no",
+                         "response": "krisis is its own clause here."},
+                    ],
+                }
+            ],
+        }
+
+    def tearDown(self):
+        self.temp.cleanup()
+
+    def save(self):
+        write_json(self.root / "data" / "cards" / "sample.json", self.deck)
+
+    def errors(self):
+        found = []
+        validate.validate_cards(self.root, found)
+        return found
+
+    def assert_error_contains(self, phrase):
+        found = self.errors()
+        self.assertTrue(any(phrase in error for error in found), found)
+
+    def test_valid_fixture(self):
+        self.save()
+        self.assertEqual(self.errors(), [])
+
+    def test_absent_directory_is_not_an_error(self):
+        self.assertEqual(self.errors(), [])
+
+    def test_every_option_must_explain_itself(self):
+        """A wrong option with no explanation is a trick, not a question."""
+        self.deck["cards"][0]["options"][1]["response"] = "  "
+        self.save()
+        self.assert_error_contains("a distractor teaches nothing")
+
+    def test_standing_vocabulary_is_closed(self):
+        self.deck["cards"][0]["options"][0]["standing"] = "correct"
+        self.save()
+        self.assert_error_contains("standing must be one of")
+
+    def test_a_card_must_have_a_defensible_answer(self):
+        self.deck["cards"][0]["options"][0]["standing"] = "no"
+        self.save()
+        self.assert_error_contains("offers no defensible answer at all")
+
+    def test_reveal_is_required(self):
+        self.deck["cards"][0].pop("reveal")
+        self.save()
+        self.assert_error_contains("must have a reveal")
+
+
+class ShippedCardTests(unittest.TestCase):
+    """Guards on the real deck, not a fixture."""
+
+    def setUp(self):
+        self.deck = json.loads((validate.ROOT / "data" / "cards" / "aph-1-1.json").read_text())
+
+    def test_the_kairos_card_admits_two_defensible_readings(self):
+        """The point of that card is that the Greek is genuinely ambiguous.
+
+        If it is ever edited down to a single right answer it stops teaching the
+        thing it exists to teach, and starts asserting what the site elsewhere
+        declines to assert.
+        """
+        card = next(c for c in self.deck["cards"] if c["id"] == "kairos")
+        supported = [o for o in card["options"] if o["standing"] in {"received", "defensible"}]
+        self.assertGreaterEqual(len(supported), 3, "kairos must keep more than one defensible reading")
+
+
+
 if __name__ == "__main__":
     unittest.main()

@@ -563,3 +563,20 @@ main.map-page { max-width: 92rem; }
 .locus h3 { margin: 0 0 0.2rem; }
 .ask { background: var(--bg2); border-radius: 8px; padding: 0.7rem 1rem; font-size: 0.95rem; font-family: var(--sans); }
 .tag { font-family: var(--sans); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); }
+
+/* read: guess-then-reveal cards */
+.choices { margin: 1.1rem 0; display: grid; gap: 0.5rem; }
+button.choice, .choice.shown { display: block; width: 100%; text-align: left; font-family: var(--sans);
+  font-size: 0.94rem; padding: 0.7rem 0.9rem; border: 1px solid var(--border); border-radius: 8px;
+  background: var(--bg); color: var(--text); }
+button.choice { cursor: pointer; }
+button.choice:hover, button.choice:focus-visible { border-color: var(--accent); background: var(--bg2); }
+.choice.shown.picked { border-width: 2px; }
+.choice.shown.picked.tone-full { border-color: var(--good); background: var(--good-soft); }
+.choice.shown.picked.tone-partial { border-color: var(--warn); background: var(--warn-soft); }
+.choice.shown.picked.tone-none { border-color: var(--none); background: var(--none-soft); }
+.choice.shown b { display: block; font-weight: 500; margin-bottom: 0.3rem; }
+.choice.shown .crumb { margin: 0.4rem 0 0; }
+.choice.shown .chip { float: right; margin-left: 0.6rem; }
+a.chip, button.chip { cursor: pointer; display: inline-block; margin: 0 0.4rem 0.4rem 0;
+  border: 1px solid currentColor; background: none; text-decoration: none; }

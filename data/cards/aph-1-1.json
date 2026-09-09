@@ -1,0 +1,93 @@
+{
+ "schema_version": 1,
+ "id": "aph-1-1",
+ "title": "Life is short",
+ "lead": "Four questions about two passages of Galen. Guess before you look — being wrong is the point, and it takes about five minutes.",
+ "note": "Every answer below is sourced. Where the honest answer is 'two readings are defensible', the card says so rather than inventing a right one.",
+ "cards": [
+  {
+   "id": "alopecia",
+   "kind": "guess",
+   "eyebrow": "Galen · On the Composition of Drugs According to Places, Book 1 · Kühn XII 378",
+   "setup": "Galen opens his book on hair with the conditions he is going to treat. Two of his words are still in your dermatologist's vocabulary.",
+   "question": "ἀλωπεκία — alopecia. Where does the word come from?",
+   "options": [
+    {"label": "ἀλώπηξ, the fox", "standing": "yes",
+     "response": "The fox — proverbially prone to mange. Galen's readers would have heard the animal in the word."},
+    {"label": "ἀ- + λόπος, “without covering”", "standing": "no",
+     "response": "A reasonable guess from the alpha-privative, but no. It is the fox."},
+    {"label": "λευκός, “white”", "standing": "no",
+     "response": "That is λεύκη, “the white disease” — Galen's word a few lines later for conditions that blanch skin and hair, roughly vitiligo and its neighbours."},
+    {"label": "A physician named Alopekios", "standing": "no",
+     "response": "No such physician. It is the fox."}
+   ],
+   "reveal": "From ἀλώπηξ, the fox. And in the same passage: ὀφίασις, from ὄφις, the snake — for bald patches that creep in winding bands. Both survive in modern medicine, alopecia and the serpentine ophiasis pattern. You have just read two ancient Greek words that your doctor still uses.",
+   "links": [{"label": "the drafted preface", "href": "translations/chunk.html?id=cml-1-1"}]
+  },
+  {
+   "id": "do-no-harm",
+   "kind": "guess",
+   "eyebrow": "Galen quoting Hippocrates · Kühn XII 379",
+   "setup": "In the same preface Galen grumbles about colleagues who prescribe hair-loss remedies “without method” (χωρὶς μεθόδου) and leave patients incurably bald. He backs the complaint with a maxim.",
+   "greek": "ὠφελέειν ἢ μὴ βλάπτειν",
+   "translit": "ōphelein ē mē blaptein",
+   "gloss": "“to help — or at least to do no harm”",
+   "question": "Where is this famous line actually from?",
+   "options": [
+    {"label": "The Hippocratic Oath", "standing": "no",
+     "response": "Almost everyone says this, and it is wrong. The phrase “first, do no harm” is not in the Oath at all."},
+    {"label": "Hippocrates, Epidemics I", "standing": "yes",
+     "response": "Correct. And you can see Galen quoting rather than paraphrasing: he keeps the Ionic form ὠφελέειν instead of his own Attic ὠφελεῖν. The dialect is the fingerprint of a quotation."},
+    {"label": "Galen coined it himself", "standing": "no",
+     "response": "No — and the Ionic dialect form proves it. Galen wrote Attic; ὠφελέειν is his source's spelling, not his."},
+    {"label": "The Latin of Kühn's edition", "standing": "no",
+     "response": "The Latin is a 19th-century facing translation. The phrase is Greek and much older."}
+   ],
+   "reveal": "Epidemics I — not the Oath. This is the sort of claim that circulates for centuries because nobody checks the text. You just checked the text."
+  },
+  {
+   "id": "kairos",
+   "kind": "guess",
+   "eyebrow": "Hippocrates, Aphorisms i.1, with Galen's commentary · Kühn XVIIb 345",
+   "setup": "The most famous sentence in Greek medicine. Four clauses are uncontroversial. The third is not.",
+   "greek": "Ὁ βίος βραχύς, ἡ δὲ τέχνη μακρή, ὁ δὲ καιρὸς ὀξύς, ἡ δὲ πεῖρα σφαλερή, ἡ δὲ κρίσις χαλεπή.",
+   "translit": "ho bios brachys, hē de technē makrē, ho de kairos oxys…",
+   "gloss": "“Life is short, the art long, … experience treacherous, judgement hard.”",
+   "question": "ὁ καιρὸς ὀξύς. kairos is the fit or critical moment; oxys is “sharp, swift, acute.” What does the phrase mean here?",
+   "options": [
+    {"label": "The decisive moment is acute", "standing": "defensible",
+     "response": "Defensible, and the phrase will bear it. But Galen, expounding his own lemma, does not take it this way."},
+    {"label": "Opportunity is fleeting", "standing": "received",
+     "response": "This is the received English — Jones gives “opportunity fleeting” in the Loeb. A temporal reading: the window is short."},
+    {"label": "The time is narrow", "standing": "received",
+     "response": "Also temporal, and this is exactly what Ḥunayn ibn Isḥāq wrote in 9th-century Baghdad: الوقت ضيّق, al-waqt ḍayyiq. He was a physician himself, and he took oxys of scarcity."},
+    {"label": "The crisis is dangerous", "standing": "no",
+     "response": "oxys can mean “acute” of a disease, but κρίσις is its own clause here — and the danger word, σφαλερή, is attached to πεῖρα, experience."}
+   ],
+   "reveal": "There is no single right answer, and that is the lesson. The phrase is genuinely ambiguous between “the moment is sharp” and “the time is short.” Galen settles it for himself: expounding the lemma he calls the kairos ὀλιγοχρόνιον — “of brief duration,” and therefore hard to seize — and says it is called “sharp” only because of the flux of the material the art works on. The received English and a ninth-century Arabic physician independently agree with him.\n\nOr so we published. That turned out to be wrong, and the next card is why.",
+   "links": [{"label": "the whole verse, both witnesses", "href": "translations/aphorisms-1-1.html"}]
+  },
+  {
+   "id": "retraction",
+   "kind": "guess",
+   "eyebrow": "Catch us out · a claim this site published and withdrew",
+   "setup": "Here is the argument we ran. The Greek is ambiguous. Ḥunayn's Arabic reads it temporally — “the time is narrow.” Galen's own commentary reads it temporally — ὀλιγοχρόνιον, “of brief duration.” Two independent witnesses, arriving separately at the same construal. Strong.",
+   "question": "It is not strong. What is wrong with it?",
+   "options": [
+    {"label": "Ḥunayn was translating the commentary, so he had Galen's gloss in front of him", "standing": "yes",
+     "response": "Exactly right. What Ḥunayn rendered into Arabic was Galen's commentary — in our own copy the lemma is followed immediately by قال جالينوس, and inside the exposition he translates Galen's gloss too. He chose “narrow” in the verse because Galen's explanation of the word was on the page in front of him. The two are one witness, not two."},
+    {"label": "Ḥunayn's Arabic is too late to matter", "standing": "no",
+     "response": "Not the flaw. A ninth-century version can be excellent evidence — sometimes better than a later Greek manuscript. Lateness is not the problem here; dependence is."},
+    {"label": "Galen is not a reliable reader of Hippocrates", "standing": "no",
+     "response": "He is in fact our best ancient reader of Hippocrates. The problem is not his reliability."},
+    {"label": "The Greek text is corrupt at this point", "standing": "no",
+     "response": "Nothing suggests that. Both witnesses read ὀξύς; nobody is proposing a different Greek word."}
+   ],
+   "reveal": "The convergence we published was a translator being consistent with himself.\n\nThe retraction is on the site, next to the passage, rather than quietly deleted — because the mistake is more instructive than the passage. It is also the difference between two things worth keeping apart: a variant (the Arabic implies a different Greek word) and a construal (the Greek is not in doubt; this is how someone took it). This was the second kind, and we dressed it up as the first.",
+   "links": [
+    {"label": "the retraction in full", "href": "translations/aphorisms-1-1.html#notes"},
+    {"label": "why the distinction matters", "href": "https://github.com/posix4e/pergamap/blob/main/HARNESS.md#the-witness-protocol"}
+   ]
+  }
+ ]
+}
