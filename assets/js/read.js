@@ -20,6 +20,7 @@ const rail = document.getElementById("rail");
 const decodedBox = document.getElementById("decoded");
 const decoded = [];
 let deck = null;
+let deckId = "aph-1-1";
 let at = 0;
 let answered = new Map(); // card id -> chosen option index
 
@@ -149,6 +150,26 @@ function renderCard() {
   }
 }
 
+// A result you can paste into the comments under the video that sent you here.
+// Spoiler-free: the squares say how you did, never what the answers were. The
+// colours are the deck's own vocabulary — a card with two defensible readings
+// gives a yellow, and that is not a failure, it is the point of that card.
+const MARK = { yes: "🟩", received: "🟩", defensible: "🟨", no: "⬜" };
+
+function shareText() {
+  const marks = deck.cards.map((card) => {
+    const option = card.options[answered.get(card.id)];
+    return option ? MARK[option.standing] || "⬜" : "⬜";
+  }).join("");
+  const where = deckId === "aph-1-1" ? "pergamap.com/read" : `pergamap.com/read?deck=${deckId}`;
+  return [
+    deck.share || deck.title || "Pergamap",
+    marks,
+    `${decoded.length} words of Greek I did not have an hour ago`,
+    where,
+  ].join("\n");
+}
+
 function renderEnd() {
   rail.hidden = true;
   root.replaceChildren();
@@ -159,6 +180,18 @@ function renderEnd() {
   const box = root.appendChild(node("div", "notice"));
   box.appendChild(node("p", "", "That is the whole trick, and there is no second part to it. The ancient world is not sealed. It is written down, in quantity, in languages that take work — and the work is ordinary: look at the word, ask what the sentence needs, check who edited the text, notice when someone is telling you a thing they have not verified. Galen was doing exactly that about hot compresses in the second century, and getting cross about it."));
   box.appendChild(node("p", "", "Almost none of this man is in English. A hundred and eight works, and for ninety-three of them nobody has yet opened a single source to find out whether a translation exists — including us, which is why every row says so."));
+
+  const share = root.appendChild(node("p", "ask"));
+  const copy = share.appendChild(node("button", "chip full", "Copy my result"));
+  copy.type = "button";
+  copy.addEventListener("click", () => {
+    navigator.clipboard.writeText(shareText()).then(
+      () => { copy.textContent = "copied — paste it under the video"; },
+      () => { copy.textContent = "could not copy"; }
+    );
+  });
+  const preview = root.appendChild(node("pre", "share", shareText()));
+  preview.setAttribute("aria-label", "your result");
 
   const links = root.appendChild(node("p", "ask"));
   for (const [label, href] of [
@@ -177,9 +210,11 @@ function renderEnd() {
 
 async function main() {
   try {
-    deck = await fetch("data/cards/aph-1-1.json").then((r) => r.json());
+    const asked = new URL(location.href).searchParams.get("deck");
+    deckId = asked && /^[a-z0-9][a-z0-9-]*$/.test(asked) ? asked : "aph-1-1";
+    deck = await fetch(`data/cards/${deckId}.json`).then((r) => r.json());
   } catch {
-    root.appendChild(node("p", "error", "The questions could not be loaded. They are plain JSON at data/cards/aph-1-1.json."));
+    root.appendChild(node("p", "error", "That set of questions could not be loaded. They are plain JSON under data/cards/."));
     return;
   }
   if (!deck || deck.schema_version !== 1 || !Array.isArray(deck.cards) || !deck.cards.length) {

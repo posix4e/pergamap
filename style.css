@@ -641,3 +641,8 @@ body.decode table tbody tr:hover { background: #17140f; }
   letter-spacing: 0.11em; color: var(--muted); background: var(--bg2);
   border: 1px solid var(--border); border-radius: 99px; padding: 0.4rem 0.9rem; margin: 0;
 }
+
+/* the result you paste under the video */
+pre.share { font-family: var(--mono); font-size: 0.82rem; line-height: 1.7; white-space: pre-wrap;
+  background: var(--bg2); border: 1px solid var(--border); border-radius: 8px;
+  padding: 0.9rem 1.1rem; margin: 0.6rem 0 0; color: var(--muted); overflow-x: auto; }
