@@ -8,13 +8,15 @@
 // you do have to look, and the reward for looking is not a secret, it is
 // vocabulary.
 //
-// Keys are the transliterations in data/cards/*.json. Adding a word to a card is
-// what should add a key; this list follows that file.
+// Keys are the transliterations in data/cards/*.json, folded the way somebody
+// would actually type them: no macrons, no spaces. Adding a word to a card must
+// add a key here, and a test in tests/test_validate.py fails if it does not --
+// the feather card shipped with three words that quietly opened nothing.
 const KEYS = [
-  "pharmakon", "alopex", "alopekia", "ophiasis", "basanizo", "anameno",
-  "kairos", "oxys", "bios", "techne", "alypia", "alupia", "ophelein",
-  "blaptein", "thanasimos", "deleterion", "bibliotheke", "pseudesdoxa",
-  "energes", "oligochronion",
+  "alopex", "alopekia", "ophiasis", "psilothron", "pteron", "phaneros",
+  "pharmakon", "deleterion", "thanasimos", "anameno", "chorismethodou",
+  "basanizo", "ophelein", "blaptein", "alypia", "bibliotheke", "bios",
+  "techne", "kairos", "oxys", "oligochronion", "pseudesdoxa", "enarges",
 ];
 const LONGEST = Math.max(...KEYS.map((key) => key.length));
 const STORE = "pergamap.decode";

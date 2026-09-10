@@ -3,6 +3,7 @@ import json
 import pathlib
 import re
 import tempfile
+import unicodedata
 import unittest
 
 from tools import validate
@@ -475,6 +476,44 @@ class ShippedCardTests(unittest.TestCase):
         card = next(c for c in self.deck["cards"] if c["id"] == "kairos")
         supported = [o for o in card["options"] if o["standing"] in {"received", "defensible"}]
         self.assertGreaterEqual(len(supported), 3, "kairos must keep more than one defensible reading")
+
+
+
+
+class DecodeKeyTests(unittest.TestCase):
+    """The reading run promises that its words are keys. They have to be.
+
+    The feather card shipped with three words -- psilothron, pteron, phaneros --
+    that opened nothing when typed, because the card was written after the key
+    list and nothing connected the two. Tapping still worked, so it failed
+    silently, which is the worst way for a promise to be broken.
+    """
+
+    @staticmethod
+    def fold(text):
+        """A transliteration as somebody would actually type it: no macrons, no spaces."""
+        return "".join(
+            c for c in unicodedata.normalize("NFD", text.lower())
+            if c.isalpha() and not unicodedata.combining(c)
+        )
+
+    def setUp(self):
+        self.deck = json.loads((validate.ROOT / "data" / "cards" / "aph-1-1.json").read_text())
+        source = (validate.ROOT / "assets" / "js" / "decode.js").read_text()
+        start = source.index("const KEYS = [")
+        self.keys = set(re.findall(r'"([a-z]+)"', source[start:source.index("];", start)]))
+
+    def deck_words(self):
+        return {self.fold(w["tr"]) for c in self.deck["cards"] for w in c.get("words", [])}
+
+    def test_every_decoded_word_opens_the_second_skin(self):
+        missing = sorted(self.deck_words() - self.keys)
+        self.assertEqual(missing, [], f"words shown as keys that open nothing: {missing}")
+
+    def test_no_key_without_a_word_behind_it(self):
+        """A key nobody can earn is a cheat code, which is a different game."""
+        orphans = sorted(self.keys - self.deck_words())
+        self.assertEqual(orphans, [], f"keys the run never teaches: {orphans}")
 
 
 
