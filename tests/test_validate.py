@@ -3,6 +3,7 @@ import json
 import pathlib
 import re
 import tempfile
+import unicodedata
 import unittest
 
 from tools import validate
@@ -386,6 +387,153 @@ class ValidatorTests(unittest.TestCase):
                 "full",
                 f"{work_id} is on the shortlist but already has a full English translation",
             )
+
+
+
+class CardTests(unittest.TestCase):
+    """Every option must earn its place, and no card may be unanswerable."""
+
+    def setUp(self):
+        self.temp = tempfile.TemporaryDirectory()
+        self.root = pathlib.Path(self.temp.name)
+        (self.root / "data" / "cards").mkdir(parents=True)
+        self.deck = {
+            "schema_version": 1,
+            "id": "sample",
+            "cards": [
+                {
+                    "id": "kairos",
+                    "eyebrow": "Hippocrates, Aphorisms i.1",
+                    "question": "What does the phrase mean here?",
+                    "reveal": "There is no single right answer, and that is the lesson.",
+                    "options": [
+                        {"label": "Opportunity is fleeting", "standing": "received",
+                         "response": "The received English; Jones gives this in the Loeb."},
+                        {"label": "The crisis is dangerous", "standing": "no",
+                         "response": "krisis is its own clause here."},
+                    ],
+                }
+            ],
+        }
+
+    def tearDown(self):
+        self.temp.cleanup()
+
+    def save(self):
+        write_json(self.root / "data" / "cards" / "sample.json", self.deck)
+
+    def errors(self):
+        found = []
+        validate.validate_cards(self.root, found)
+        return found
+
+    def assert_error_contains(self, phrase):
+        found = self.errors()
+        self.assertTrue(any(phrase in error for error in found), found)
+
+    def test_valid_fixture(self):
+        self.save()
+        self.assertEqual(self.errors(), [])
+
+    def test_absent_directory_is_not_an_error(self):
+        self.assertEqual(self.errors(), [])
+
+    def test_every_option_must_explain_itself(self):
+        """A wrong option with no explanation is a trick, not a question."""
+        self.deck["cards"][0]["options"][1]["response"] = "  "
+        self.save()
+        self.assert_error_contains("a distractor teaches nothing")
+
+    def test_standing_vocabulary_is_closed(self):
+        self.deck["cards"][0]["options"][0]["standing"] = "correct"
+        self.save()
+        self.assert_error_contains("standing must be one of")
+
+    def test_a_card_must_have_a_defensible_answer(self):
+        self.deck["cards"][0]["options"][0]["standing"] = "no"
+        self.save()
+        self.assert_error_contains("offers no defensible answer at all")
+
+    def test_reveal_is_required(self):
+        self.deck["cards"][0].pop("reveal")
+        self.save()
+        self.assert_error_contains("must have a reveal")
+
+
+class ShippedCardTests(unittest.TestCase):
+    """Guards on the real deck, not a fixture."""
+
+    def setUp(self):
+        self.deck = json.loads((validate.ROOT / "data" / "cards" / "aph-1-1.json").read_text())
+
+    def test_the_kairos_card_admits_two_defensible_readings(self):
+        """The point of that card is that the Greek is genuinely ambiguous.
+
+        If it is ever edited down to a single right answer it stops teaching the
+        thing it exists to teach, and starts asserting what the site elsewhere
+        declines to assert.
+        """
+        card = next(c for c in self.deck["cards"] if c["id"] == "kairos")
+        supported = [o for o in card["options"] if o["standing"] in {"received", "defensible"}]
+        self.assertGreaterEqual(len(supported), 3, "kairos must keep more than one defensible reading")
+
+
+
+
+class DecodeKeyTests(unittest.TestCase):
+    """The reading run promises that its words are keys. They have to be.
+
+    The feather card shipped with three words -- psilothron, pteron, phaneros --
+    that opened nothing when typed, because the card was written after the key
+    list and nothing connected the two. Tapping still worked, so it failed
+    silently, which is the worst way for a promise to be broken.
+    """
+
+    @staticmethod
+    def fold(text):
+        """A transliteration as somebody would actually type it: no macrons, no spaces."""
+        return "".join(
+            c for c in unicodedata.normalize("NFD", text.lower())
+            if c.isalpha() and not unicodedata.combining(c)
+        )
+
+    def setUp(self):
+        self.deck = json.loads((validate.ROOT / "data" / "cards" / "aph-1-1.json").read_text())
+        source = (validate.ROOT / "assets" / "js" / "decode.js").read_text()
+        start = source.index("const KEYS = [")
+        self.keys = set(re.findall(r'"([a-z]+)"', source[start:source.index("];", start)]))
+
+    def deck_words(self):
+        return {self.fold(w["tr"]) for c in self.deck["cards"] for w in c.get("words", [])}
+
+    def test_every_decoded_word_opens_the_second_skin(self):
+        missing = sorted(self.deck_words() - self.keys)
+        self.assertEqual(missing, [], f"words shown as keys that open nothing: {missing}")
+
+    def test_forgiving_folding_keeps_the_keys_distinct(self):
+        """decode.js forgives c/k, y/u and ph/f. It must not merge two words.
+
+        A collision would mean one card's vocabulary silently opening on another
+        card's word, which is not wrong exactly, but it is not what the run says
+        it is doing.
+        """
+        def js_fold(text):
+            t = self.fold(text)
+            for old, new in (("ph", "f"), ("ch", "kh"), ("c", "k"), ("y", "u")):
+                t = t.replace(old, new)
+            return t
+
+        seen = {}
+        for key in sorted(self.keys):
+            folded = js_fold(key)
+            self.assertNotIn(folded, seen, f"{key} and {seen.get(folded)} both fold to {folded}")
+            seen[folded] = key
+
+    def test_no_key_without_a_word_behind_it(self):
+        """A key nobody can earn is a cheat code, which is a different game."""
+        orphans = sorted(self.keys - self.deck_words())
+        self.assertEqual(orphans, [], f"keys the run never teaches: {orphans}")
+
 
 
 if __name__ == "__main__":

@@ -1,0 +1,494 @@
+{
+ "schema_version": 1,
+ "id": "aph-1-1",
+ "title": "You can just read it",
+ "lead": "Nine passes over a two-thousand-year-old book about hair loss, by a doctor with no patience for people who don't check. Guess first, then look. You keep every word you decode.",
+ "note": "Nothing here is hidden from you. It is in a language almost nobody reads — a different problem, and a fixable one.",
+ "cards": [
+  {
+   "id": "alopecia",
+   "kind": "guess",
+   "eyebrow": "Galen · On the Composition of Drugs According to Places, Book 1 · Kühn XII 378",
+   "setup": "Galen opens his book on hair with the conditions he is going to treat. Two of his words are still in your dermatologist's vocabulary.",
+   "question": "ἀλωπεκία — alopecia. Where does the word come from?",
+   "options": [
+    {
+     "label": "ἀλώπηξ, the fox",
+     "standing": "yes",
+     "response": "The fox — proverbially prone to mange. Galen's readers would have heard the animal in the word."
+    },
+    {
+     "label": "ἀ- + λόπος, “without covering”",
+     "standing": "no",
+     "response": "A reasonable guess from the alpha-privative, but no. It is the fox."
+    },
+    {
+     "label": "λευκός, “white”",
+     "standing": "no",
+     "response": "That is λεύκη, “the white disease” — Galen's word a few lines later for conditions that blanch skin and hair, roughly vitiligo and its neighbours."
+    },
+    {
+     "label": "A physician named Alopekios",
+     "standing": "no",
+     "response": "No such physician. It is the fox."
+    }
+   ],
+   "reveal": "From ἀλώπηξ, the fox. And in the same passage: ὀφίασις, from ὄφις, the snake — for bald patches that creep in winding bands. Both survive in modern medicine, alopecia and the serpentine ophiasis pattern. You have just read two ancient Greek words that your doctor still uses.",
+   "links": [
+    {
+     "label": "the drafted preface",
+     "href": "translations/chunk.html?id=cml-1-1"
+    }
+   ],
+   "words": [
+    {
+     "gr": "ἀλώπηξ",
+     "tr": "alōpēx",
+     "en": "fox"
+    },
+    {
+     "gr": "ἀλωπεκία",
+     "tr": "alōpekia",
+     "en": "hair loss"
+    },
+    {
+     "gr": "ὀφίασις",
+     "tr": "ophiasis",
+     "en": "snake-pattern baldness"
+    }
+   ]
+  },
+  {
+   "id": "the-feather",
+   "kind": "guess",
+   "eyebrow": "Galen · on depilatories · Kühn XII",
+   "setup": "Galen sorts hair-removal preparations into three strengths: ones that merely thin the hair, ones properly called ψίλωθρα, and ones that take it off altogether. Which leaves a practical problem — how do you know how strong the batch in front of you actually is?",
+   "greek": "τοῦτο δὲ ἔσται φανερὸν εἰ πτερὸν καθιέντι σοι εἰς τὸ ψίλωθρον ἀπομαδίσει συντόμως.",
+   "translit": "…ei pteron kathienti soi eis to psilōthron apomadisei syntomōs.",
+   "gloss": "“…if, when you dip a feather into the depilatory, it strips bare quickly.”",
+   "question": "So what is the feather for?",
+   "options": [
+    {
+     "label": "Testing the strength of the batch before it goes near a person",
+     "standing": "yes",
+     "response": "A potency assay, with a feather. If the barbs come away fast, the preparation is strong; if not, it is weak. Cheap, repeatable, and nobody gets burnt finding out."
+    },
+    {
+     "label": "Applying the preparation",
+     "standing": "no",
+     "response": "You would use it that way too, but that is not what this sentence is doing. He is telling you how something will become φανερόν — clear, evident. It is a test."
+    },
+    {
+     "label": "Stirring the mixture",
+     "standing": "no",
+     "response": "Nothing here is about mixing. The feather goes in and comes out changed, and the change is the reading."
+    },
+    {
+     "label": "A ritual element",
+     "standing": "no",
+     "response": "Galen is the last man in antiquity you would go to for that. He wants to know how strong the batch is."
+    }
+   ],
+   "reveal": "He is standing in a workshop wondering whether the jar in front of him is too strong for a customer's leg, and he has worked out that a feather is a leg he does not have to apologise to.\n\nThis is the texture of the corpus once you are actually in it. Not doctrine — a hundred small practical solutions by a man who would rather find out than assume. Elsewhere in the same book: crush a hundred green walnuts between the Kalends and the Ides of July, because that is when they are right. Grind mouse droppings with vinegar and smear it on. Lice, he notes, sometimes appear on the head all at once.\n\nNone of it was ever hidden. It is just that reading it takes a language, and almost nobody has.",
+   "words": [
+    {
+     "gr": "ψίλωθρον",
+     "tr": "psilothron",
+     "en": "a depilatory"
+    },
+    {
+     "gr": "πτερόν",
+     "tr": "pteron",
+     "en": "feather"
+    },
+    {
+     "gr": "φανερός",
+     "tr": "phaneros",
+     "en": "clear, evident"
+    }
+   ],
+   "links": [
+    {
+     "label": "the book this is from",
+     "href": "library.html?work=tlg076"
+    }
+   ]
+  },
+  {
+   "id": "pharmakon",
+   "kind": "guess",
+   "eyebrow": "Galen · On the Composition of Drugs According to Places · Kühn XII",
+   "setup": "Galen is describing a salve he makes for scalp complaints, and a substitution he tried.",
+   "greek": "ἔμιξα δέ ποτε καὶ μέλιτος ἀντὶ τῆς κηρωτῆς ἐλάττονος ὄγκῳ τε καὶ σταθμῷ, καὶ οὐδενὶ χεῖρον ἐγένετο τὸ φάρμακον.",
+   "translit": "…kai oudeni cheiron egeneto to pharmakon.",
+   "gloss": "“I once mixed in honey instead of the wax salve, less in bulk and in weight, and the pharmakon was none the worse for it.”",
+   "question": "What is τὸ φάρμακον here?",
+   "options": [
+    {
+     "label": "The preparation he is making",
+     "standing": "yes",
+     "response": "Yes — the ointment in the pot. He is telling you a substitution worked."
+    },
+    {
+     "label": "A poison",
+     "standing": "no",
+     "response": "The word can mean that elsewhere. It cannot mean it here: he is putting honey in it and applying it to a patient's head."
+    },
+    {
+     "label": "A magical potion",
+     "standing": "no",
+     "response": "Nothing magical is in view. The neighbouring sentences are about shelf life and weights."
+    },
+    {
+     "label": "A sacred or initiatory drug",
+     "standing": "no",
+     "response": "No. Two lines later he notes that some preparations are still usable after twenty or thirty years, which is a remark about a store cupboard."
+    }
+   ],
+   "reveal": "φάρμακον is the ordinary word for a made-up preparation — remedy, drug, and in other contexts poison. All three senses are real, and the sentence decides which one is in play, every time.\n\nYou can count this rather than argue about it, and so can you — the command is in the link below. In this one work the stem φαρμακ- appears 1,262 times, almost always meaning the thing he compounds and applies. When Galen means specifically deadly he reaches for other words: δηλητήριον four times, θανάσιμος seven. If φάρμακον by itself carried the sinister sense, he would not have needed them — and he would not be telling you your φάρμακον is still fine after twenty years on the shelf.\n\nThis is the single most useful habit you can take away: a word with a range does not have a secret true meaning. It has a use in a sentence, and the sentence is checkable.",
+   "links": [
+    {
+     "label": "the drug book in the catalogue",
+     "href": "library.html?work=tlg076"
+    },
+    {
+     "label": "count it yourself: tools/count_stem.py",
+     "href": "https://github.com/posix4e/pergamap/blob/main/tools/count_stem.py"
+    }
+   ],
+   "words": [
+    {
+     "gr": "φάρμακον",
+     "tr": "pharmakon",
+     "en": "preparation · drug · poison"
+    },
+    {
+     "gr": "δηλητήριον",
+     "tr": "dēlētērion",
+     "en": "poison, properly"
+    },
+    {
+     "gr": "θανάσιμος",
+     "tr": "thanasimos",
+     "en": "deadly"
+    }
+   ]
+  },
+  {
+   "id": "the-control",
+   "kind": "guess",
+   "eyebrow": "Galen · On the Composition of Drugs According to Places, Book 1",
+   "setup": "Galen has a remedy for falling hair. It seems to work: he applies it, the hair comes back. Other physicians in Rome are selling the same kind of thing and taking the credit. He is not satisfied.",
+   "greek": "ἐντεῦθεν οὖν ὁρμηθεὶς ἐγὼ τὴν αὐτὴν θεραπείαν ἐφ’ ἑτέρων ποιησάμενος ἀνέμεινα θεάσασθαι χωρὶς τῶν ἐπιτιθεμένων τῇ κεφαλῇ φαρμάκων τὸ γενησόμενον.",
+   "translit": "…anemeina theasasthai chōris tōn epitithemenōn tē kephalē pharmakōn to genēsomenon.",
+   "gloss": "“…I waited to see what would happen without the preparations applied to the head.”",
+   "question": "What is he doing in that sentence?",
+   "options": [
+    {
+     "label": "Withholding the drug to find out whether it was doing anything",
+     "standing": "yes",
+     "response": "Exactly that. He treated the underlying condition, then deliberately left the head untreated on some patients — and waited. If the hair came back anyway, the famous remedy was taking credit for the body's own work."
+    },
+    {
+     "label": "Running out of the ingredients",
+     "standing": "no",
+     "response": "No. He is choosing not to apply it, on purpose, to find something out."
+    },
+    {
+     "label": "Treating patients who refused the drug",
+     "standing": "no",
+     "response": "The initiative is his. ἐγώ is doing real work in that sentence — he is telling you this was his idea."
+    },
+    {
+     "label": "Describing what a rival did badly",
+     "standing": "no",
+     "response": "He does plenty of that elsewhere. Here he is describing his own procedure, and it is better than theirs."
+    }
+   ],
+   "reveal": "A second-century physician withheld a treatment in order to see whether it was the treatment doing the work. No apparatus, no statistics, no word for what he was doing — just the refusal to be impressed by his own success.\n\nThat is the actual magic of Galen, and it is not mystical in the least. He is the most practical man in the room: he tries things, he watches what happens, he says when he was wrong, and he is permanently irritated by colleagues who skip that part. Elsewhere he complains that using drugs χωρὶς μεθόδου — without method — does not merely fail to help but often does harm, and that some of them leave patients permanently bald.\n\nHe would have had absolutely no patience for being quoted by people who have not read him.",
+   "words": [
+    {
+     "gr": "ἀναμένω",
+     "tr": "anamenō",
+     "en": "I wait, hold off"
+    },
+    {
+     "gr": "χωρὶς μεθόδου",
+     "tr": "chōris methodou",
+     "en": "without method"
+    },
+    {
+     "gr": "βασανίζω",
+     "tr": "basanizō",
+     "en": "I test — as gold on a touchstone"
+    }
+   ],
+   "links": [
+    {
+     "label": "the preface, drafted",
+     "href": "translations/chunk.html?id=cml-1-1"
+    }
+   ]
+  },
+  {
+   "id": "do-no-harm",
+   "kind": "guess",
+   "eyebrow": "Galen quoting Hippocrates · Kühn XII 379",
+   "setup": "In the same preface Galen grumbles about colleagues who prescribe hair-loss remedies “without method” (χωρὶς μεθόδου) and leave patients incurably bald. He backs the complaint with a maxim.",
+   "greek": "ὠφελέειν ἢ μὴ βλάπτειν",
+   "translit": "ōphelein ē mē blaptein",
+   "gloss": "“to help — or at least to do no harm”",
+   "question": "Where is this famous line actually from?",
+   "options": [
+    {
+     "label": "The Hippocratic Oath",
+     "standing": "no",
+     "response": "Almost everyone says this, and it is wrong. The phrase “first, do no harm” is not in the Oath at all."
+    },
+    {
+     "label": "Hippocrates, Epidemics I",
+     "standing": "yes",
+     "response": "Correct. And you can see Galen quoting rather than paraphrasing: he keeps the Ionic form ὠφελέειν instead of his own Attic ὠφελεῖν. The dialect is the fingerprint of a quotation."
+    },
+    {
+     "label": "Galen coined it himself",
+     "standing": "no",
+     "response": "No — and the Ionic dialect form proves it. Galen wrote Attic; ὠφελέειν is his source's spelling, not his."
+    },
+    {
+     "label": "The Latin of Kühn's edition",
+     "standing": "no",
+     "response": "The Latin is a 19th-century facing translation. The phrase is Greek and much older."
+    }
+   ],
+   "reveal": "Epidemics I — not the Oath. This is the sort of claim that circulates for centuries because nobody checks the text. You just checked the text.",
+   "words": [
+    {
+     "gr": "ὠφελεῖν",
+     "tr": "ōphelein",
+     "en": "to help"
+    },
+    {
+     "gr": "βλάπτειν",
+     "tr": "blaptein",
+     "en": "to harm"
+    }
+   ]
+  },
+  {
+   "id": "the-fire",
+   "kind": "guess",
+   "eyebrow": "Rome, 192 CE — and a monastery in Thessaloniki, 2005",
+   "setup": "A fire on the Sacred Way took the storehouses by the Temple of Peace. Galen kept his library there: his own unpublished drafts, his instruments, recipes he had spent thirty years collecting from other physicians. All of it went. Afterwards he wrote a short book about how he managed not to be destroyed by losing it — Περὶ ἀλυπίας, on freedom from grief.",
+   "greek": "Περὶ ἀλυπίας",
+   "translit": "Peri alypias",
+   "gloss": "“On freedom from grief” — a man explaining how he coped with losing his life's work",
+   "question": "That book then disappeared for roughly seven hundred years. How did we get it back?",
+   "options": [
+    {
+     "label": "A PhD student found it while waiting for some microfilms",
+     "standing": "yes",
+     "response": "Yes. January 2005, the Vlatadon monastery in Thessaloniki. Antoine Pietrobelli was there to consult microfilms for his thesis, and while he waited for someone to fetch them he picked up the library's catalogue to pass the time. The catalogue had been published in 1918."
+    },
+    {
+     "label": "It was suppressed and later recovered",
+     "standing": "no",
+     "response": "Nobody suppressed it. Nobody was even guarding it. It sat in a monastery library that had published a catalogue of its own holdings, and for eighty-seven years no one opened the catalogue at that page."
+    },
+    {
+     "label": "It is still lost — we only know the title",
+     "standing": "no",
+     "response": "True until 2005. Galen lists it in his own catalogue of his works, so we always knew it had existed; the last trace of anyone reading it was in the thirteenth century."
+    },
+    {
+     "label": "Only an Arabic version survives",
+     "standing": "defensible",
+     "response": "That was the state of things for centuries — the last trace was extracts translated into Arabic by a thirteenth-century physician, and written down in Hebrew characters. Then the Greek turned up."
+    }
+   ],
+   "reveal": "Boredom, a 1918 catalogue, and a fifteenth-century manuscript nobody had read. The first edition was published in 2007.\n\nThis is what “lost” almost always means. Not hidden, not burned, not taken from you. Unread. Sitting in a building, in a language, catalogued, waiting.\n\nThere are more of these. That is the good news, and it is why the map on this site marks what nobody has checked rather than pretending the gaps are known.",
+   "words": [
+    {
+     "gr": "ἀλυπία",
+     "tr": "alypia",
+     "en": "freedom from grief"
+    },
+    {
+     "gr": "βιβλιοθήκη",
+     "tr": "bibliothēkē",
+     "en": "library"
+    }
+   ],
+   "links": [
+    {
+     "label": "what nobody has checked yet",
+     "href": "library.html"
+    }
+   ]
+  },
+  {
+   "id": "kairos",
+   "kind": "guess",
+   "eyebrow": "Hippocrates, Aphorisms i.1, with Galen's commentary · Kühn XVIIb 345",
+   "setup": "The most famous sentence in Greek medicine. Four of its clauses are uncontroversial. The third is not.",
+   "greek": "Ὁ βίος βραχύς, ἡ δὲ τέχνη μακρή, ὁ δὲ καιρὸς ὀξύς, ἡ δὲ πεῖρα σφαλερή, ἡ δὲ κρίσις χαλεπή.",
+   "translit": "ho bios brachys, hē de technē makrē, ho de kairos oxys…",
+   "gloss": "“Life is short, the art long, … experience treacherous, judgement hard.”",
+   "question": "ὁ καιρὸς ὀξύς. kairos is the fit or critical moment; oxys is “sharp, swift, acute.” What does it mean here?",
+   "options": [
+    {
+     "label": "The decisive moment is acute",
+     "standing": "defensible",
+     "response": "Defensible — the phrase will bear it. But Galen, expounding his own lemma, does not take it this way."
+    },
+    {
+     "label": "Opportunity is fleeting",
+     "standing": "received",
+     "response": "The received English. Jones gives “opportunity fleeting” in the Loeb: the window is short."
+    },
+    {
+     "label": "The time is narrow",
+     "standing": "received",
+     "response": "Also temporal — and exactly what Ḥunayn wrote in ninth-century Baghdad: الوقت ضيّق, al-waqt ḍayyiq, “the time is narrow.”"
+    },
+    {
+     "label": "The crisis is dangerous",
+     "standing": "no",
+     "response": "oxys does mean “acute” of a disease. But κρίσις has its own clause here, and the danger word σφαλερή is attached to πεῖρα."
+    }
+   ],
+   "reveal": "No single right answer, and that is the lesson: the phrase is genuinely poised between “the moment is sharp” and “the time is short.” Galen settles it for himself — expounding the lemma he calls the kairos ὀλιγοχρόνιον, of brief duration, and therefore hard to seize.\n\nThe received English agrees with him. So does a ninth-century Arabic physician, independently.\n\nOr so we published. The next card is why that was wrong.",
+   "links": [
+    {
+     "label": "the whole verse, both witnesses",
+     "href": "translations/aphorisms-1-1.html"
+    }
+   ],
+   "words": [
+    {
+     "gr": "βίος",
+     "tr": "bios",
+     "en": "life"
+    },
+    {
+     "gr": "τέχνη",
+     "tr": "technē",
+     "en": "craft, skill"
+    },
+    {
+     "gr": "καιρός",
+     "tr": "kairos",
+     "en": "the critical moment"
+    },
+    {
+     "gr": "ὀξύς",
+     "tr": "oxys",
+     "en": "sharp · swift · acute"
+    }
+   ]
+  },
+  {
+   "id": "retraction",
+   "kind": "guess",
+   "eyebrow": "Catch us out · a claim this site published and withdrew",
+   "setup": "Here is the argument we ran. The Greek is ambiguous. Ḥunayn's Arabic reads it temporally — “the time is narrow.” Galen's own commentary reads it temporally — ὀλιγοχρόνιον, “of brief duration.” Two independent witnesses, arriving separately at the same construal. Strong.",
+   "question": "It is not strong. What is wrong with it?",
+   "options": [
+    {
+     "label": "Ḥunayn was translating the commentary, so he had Galen's gloss in front of him",
+     "standing": "yes",
+     "response": "Exactly right. What Ḥunayn rendered into Arabic was Galen's commentary — in our own copy the lemma is followed immediately by قال جالينوس, and inside the exposition he translates Galen's gloss too. He chose “narrow” in the verse because Galen's explanation of the word was on the page in front of him. The two are one witness, not two."
+    },
+    {
+     "label": "Ḥunayn's Arabic is too late to matter",
+     "standing": "no",
+     "response": "Not the flaw. A ninth-century version can be excellent evidence — sometimes better than a later Greek manuscript. Lateness is not the problem here; dependence is."
+    },
+    {
+     "label": "Galen is not a reliable reader of Hippocrates",
+     "standing": "no",
+     "response": "He is in fact our best ancient reader of Hippocrates. The problem is not his reliability."
+    },
+    {
+     "label": "The Greek text is corrupt at this point",
+     "standing": "no",
+     "response": "Nothing suggests that. Both witnesses read ὀξύς; nobody is proposing a different Greek word."
+    }
+   ],
+   "reveal": "The convergence we published was a translator being consistent with himself.\n\nThe retraction is on the site, next to the passage, rather than quietly deleted — because the mistake is more instructive than the passage. It is also the difference between two things worth keeping apart: a variant (the Arabic implies a different Greek word) and a construal (the Greek is not in doubt; this is how someone took it). This was the second kind, and we dressed it up as the first.",
+   "links": [
+    {
+     "label": "the retraction in full",
+     "href": "translations/aphorisms-1-1.html#notes"
+    },
+    {
+     "label": "why the distinction matters",
+     "href": "https://github.com/posix4e/pergamap/blob/main/HARNESS.md#the-witness-protocol"
+    }
+   ],
+   "words": [
+    {
+     "gr": "ὀλιγοχρόνιον",
+     "tr": "oligochronion",
+     "en": "of brief duration"
+    }
+   ]
+  },
+  {
+   "id": "false-opinions",
+   "kind": "guess",
+   "eyebrow": "Galen · in the middle of a chapter about hair remedies",
+   "setup": "Galen breaks off from a discussion of poultices to complain about a claim he thinks is plainly false — that swellings are wonderfully dispersed by hot fomentation. Then he says why people go on believing it.",
+   "greek": "αἱ γάρ τοι ψευδεῖς δόξαι, προκαταλαμβάνουσαι τὰς ψυχὰς τῶν ἀνθρώπων, οὐ μόνον κωφοὺς, ἀλλὰ καὶ τυφλοὺς ἐργάζονται τῶν τοῖς ἄλλοις ἐναργῶς ὁρωμένων.",
+   "translit": "hai gar toi pseudeis doxai… ou monon kōphous, alla kai typhlous ergazontai…",
+   "gloss": "“For false beliefs, once they have taken hold of people's minds, make them not merely deaf but blind — to things that others see plainly.”",
+   "question": "When was that written?",
+   "options": [
+    {
+     "label": "The second century AD",
+     "standing": "yes",
+     "response": "Yes — around 180 years after the birth of Christ, by a working doctor, in a technical manual about drug preparation, in the middle of an argument about hot compresses."
+    },
+    {
+     "label": "The Enlightenment",
+     "standing": "no",
+     "response": "It reads like it. It is roughly fifteen hundred years earlier."
+    },
+    {
+     "label": "A modern psychology paper",
+     "standing": "no",
+     "response": "It would not be out of place in one. It is Galen, annoyed about poultices."
+    },
+    {
+     "label": "Someone quoting Galen much later",
+     "standing": "no",
+     "response": "It is Galen himself, in his own book, in the same chapter as the recipes."
+    }
+   ],
+   "reveal": "He is not describing a conspiracy. He is describing the ordinary way a confident claim, once lodged, stops you noticing what is in front of you — and his cure for it is the least glamorous thing imaginable. Withhold the drug. Look at what happens. Say so.\n\nNothing about the ancient world was being kept from you. The whole of it is sitting in libraries in languages almost nobody reads, and a hundred and eight works of this one man are catalogued on this site with ninety-three of them still unchecked by anybody, including us.\n\nThere was never a secret. There was a language. You just read some of it.",
+   "words": [
+    {
+     "gr": "ψευδὴς δόξα",
+     "tr": "pseudēs doxa",
+     "en": "a false belief"
+    },
+    {
+     "gr": "ἐναργής",
+     "tr": "enargēs",
+     "en": "plainly visible"
+    }
+   ],
+   "links": [
+    {
+     "label": "the hundred and eight, and what nobody has checked",
+     "href": "library.html"
+    },
+    {
+     "label": "how to check us",
+     "href": "https://github.com/posix4e/pergamap/blob/main/CONTRIBUTING.md"
+    }
+   ]
+  }
+ ],
+ "share": "Pergamap · Galen on hair, drugs and being wrong"
+}

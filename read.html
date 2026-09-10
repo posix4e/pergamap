@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>You can just read it — Pergamap</title>
+<meta name="description" content="Four questions about two passages of Galen. Guess before you look. Five minutes, no Greek required, and one of the answers is a mistake this site published and had to withdraw.">
+<meta property="og:title" content="You can just read it — Pergamap">
+<meta property="og:description" content="Don't take anyone's word for what the Greek says. Look at it.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Pergamap">
+<link rel="canonical" href="https://pergamap.com/read">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site">
+  <a class="brand" href="index.html">Perga<span>map</span></a>
+  <nav aria-label="Primary">
+    <a href="read.html" class="here" aria-current="page">Read</a>
+    <a href="library.html">Library</a>
+    <a href="transmission.html">Transmission</a>
+    <a href="translations/index.html">Texts</a>
+    <a href="roadmap.html">Roadmap</a>
+    <a href="https://github.com/posix4e/pergamap">GitHub</a>
+  </nav>
+</header>
+<main>
+  <p id="rail" hidden><span class="step"></span><span class="bar"><i></i></span><span class="count"></span></p>
+  <div id="run"></div>
+  <section id="decoded" hidden></section>
+  <noscript><p class="error">This page needs JavaScript. The questions and their sources are plain JSON: <a href="data/cards/aph-1-1.json">data/cards/aph-1-1.json</a>.</p></noscript>
+</main>
+<footer class="site">
+  <p>Greek from <a href="https://github.com/OpenGreekAndLatin/First1KGreek">First1KGreek</a>, Arabic from the <a href="https://www.graeco-arabic-studies.org/">Digital Corpus for Graeco-Arabic Studies</a>, both CC BY-SA, after Kühn. Translations here are amateur and AI-assisted, published with their sources so they can be argued with. <a href="translations/aphorisms-1-1.html">The passage in full →</a></p>
+</footer>
+<script src="assets/js/read.js" defer></script>
+<script src="assets/js/decode.js" defer></script>
+</body>
+</html>

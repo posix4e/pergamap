@@ -703,6 +703,66 @@ def validate_bbaw_crosswalk(
     return len(mappings)
 
 
+STANDINGS = {"yes", "received", "defensible", "no"}
+
+
+def validate_cards(root: pathlib.Path, errors: list[str]) -> None:
+    """Question sets for the reading cards.
+
+    The cards ask a reader to commit before being told anything, so the one rule
+    worth enforcing is that every option earns its place: each must say what it
+    is worth and why. An option with no explanation is a distractor, and a
+    distractor teaches nothing.
+    """
+    directory = root / "data" / "cards"
+    for path in sorted(directory.glob("*.json")) if directory.exists() else []:
+        label = f"data/cards/{path.name}"
+        deck = load_json(path, errors, label)
+        if not isinstance(deck, dict):
+            continue
+        if deck.get("schema_version") != 1:
+            errors.append(f"{label}: schema_version must be 1")
+        cards = deck.get("cards")
+        if not isinstance(cards, list) or not cards:
+            errors.append(f"{label}: cards must be a non-empty list")
+            continue
+        seen: set[str] = set()
+        for card in cards:
+            cid = card.get("id") if isinstance(card, dict) else None
+            if not isinstance(cid, str) or not SAFE_ID.match(cid):
+                errors.append(f"{label}: every card needs an id")
+                continue
+            if cid in seen:
+                errors.append(f"{label}: duplicate card id {cid}")
+            seen.add(cid)
+            for field in ("eyebrow", "question", "reveal"):
+                if not str(card.get(field) or "").strip():
+                    errors.append(f"{label}: card {cid} must have a {field}")
+            options = card.get("options")
+            if not isinstance(options, list) or len(options) < 2:
+                errors.append(f"{label}: card {cid} needs at least two options")
+                continue
+            for option in options:
+                name = option.get("label") if isinstance(option, dict) else None
+                if not str(name or "").strip():
+                    errors.append(f"{label}: card {cid} has an option with no label")
+                    continue
+                if option.get("standing") not in STANDINGS:
+                    errors.append(
+                        f"{label}: card {cid} option {name!r}: standing must be one of {sorted(STANDINGS)}"
+                    )
+                if not str(option.get("response") or "").strip():
+                    errors.append(
+                        f"{label}: card {cid} option {name!r} has no response. "
+                        "An option with no explanation is a distractor, and a distractor teaches nothing"
+                    )
+            if not any(o.get("standing") in {"yes", "received"} for o in options if isinstance(o, dict)):
+                errors.append(f"{label}: card {cid} offers no defensible answer at all")
+            for link in card.get("links") or []:
+                if not is_safe_url(link.get("href"), allow_local=True):
+                    errors.append(f"{label}: card {cid} has an unsafe link")
+
+
 def validate(root: pathlib.Path = ROOT) -> list[str]:
     errors: list[str] = []
     work_ids, _, _ = validate_works(root, errors)
@@ -711,6 +771,7 @@ def validate(root: pathlib.Path = ROOT) -> list[str]:
     validate_transmission(root, work_ids, witness_files, errors)
     bbaw_ids = validate_bbaw(root, errors)
     validate_bbaw_crosswalk(root, work_ids, bbaw_ids, errors)
+    validate_cards(root, errors)
     return errors
 
 
