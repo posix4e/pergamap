@@ -56,6 +56,26 @@ function isTargetEditable(event) {
   );
 }
 
+// Somebody told "type one, anywhere on this site" will click the obvious text
+// box and type there — and the keydown path below deliberately ignores inputs so
+// that searching still works. So the search field is a key too, and the failed
+// search is the discovery: nothing matches pharmakon in a catalogue of Latin
+// titles, and then the lights go out.
+//
+// Matched on the whole field value, not as a suffix: searching for a real title
+// must never trip this by accident.
+document.addEventListener("input", (event) => {
+  const el = event.target;
+  if (!(el instanceof HTMLInputElement) && !(el instanceof HTMLTextAreaElement)) return;
+  const value = el.value.toLowerCase().replace(/[^a-z]/g, "");
+  if (!value || !KEYS.includes(value)) return;
+  el.value = "";
+  el.dispatchEvent(new Event("input", { bubbles: true }));  // let the page's own filter recover
+  const on = !document.body.classList.contains("decode");
+  apply(on);
+  announce(on);
+});
+
 // The reading run hands the same switch to a finger: a decoded word is a key
 // whether you type it or tap it, and a phone has no keyboard to type it with.
 document.addEventListener("pergamap:decode", () => {
