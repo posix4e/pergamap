@@ -18,7 +18,26 @@ const KEYS = [
   "basanizo", "ophelein", "blaptein", "alypia", "bibliotheke", "bios",
   "techne", "kairos", "oxys", "oligochronion", "pseudesdoxa", "enarges",
 ];
-const LONGEST = Math.max(...KEYS.map((key) => key.length));
+
+// Somebody who has just met φάρμακον will type "pharmacon", because English
+// gave them pharmacy and pharmaceutical long before anyone mentioned kappa.
+// Transliteration is a scholarly convention and fingers do not know it, so the
+// matcher forgives the places where the conventions actually disagree: c/k,
+// y/u, ph/f. Applied to both sides, so nothing is lost — and checked against all
+// 193 catalogue titles, none of which collides with a key.
+function fold(text) {
+  return text
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[^a-z]/g, "")
+    .replace(/ph/g, "f")
+    .replace(/ch/g, "kh")
+    .replace(/c/g, "k")
+    .replace(/y/g, "u");
+}
+
+const FOLDED = KEYS.map(fold);
+const BUFFER = 32;  // comfortably longer than any key, so folding never splits a digraph
 const STORE = "pergamap.decode";
 
 let typed = "";
@@ -67,8 +86,8 @@ function isTargetEditable(event) {
 document.addEventListener("input", (event) => {
   const el = event.target;
   if (!(el instanceof HTMLInputElement) && !(el instanceof HTMLTextAreaElement)) return;
-  const value = el.value.toLowerCase().replace(/[^a-z]/g, "");
-  if (!value || !KEYS.includes(value)) return;
+  const value = fold(el.value);
+  if (!value || !FOLDED.includes(value)) return;
   el.value = "";
   el.dispatchEvent(new Event("input", { bubbles: true }));  // let the page's own filter recover
   const on = !document.body.classList.contains("decode");
@@ -88,8 +107,8 @@ document.addEventListener("keydown", (event) => {
   if (event.ctrlKey || event.metaKey || event.altKey) return;
   if (isTargetEditable(event)) return;
   if (event.key.length !== 1 || !/[a-zA-Z]/.test(event.key)) return;
-  typed = (typed + event.key.toLowerCase()).slice(-LONGEST);
-  if (!KEYS.some((key) => typed.endsWith(key))) return;
+  typed = (typed + event.key.toLowerCase()).slice(-BUFFER);
+  if (!FOLDED.some((key) => fold(typed).endsWith(key))) return;
   typed = "";
   const on = !document.body.classList.contains("decode");
   apply(on);

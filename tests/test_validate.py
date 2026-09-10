@@ -510,6 +510,25 @@ class DecodeKeyTests(unittest.TestCase):
         missing = sorted(self.deck_words() - self.keys)
         self.assertEqual(missing, [], f"words shown as keys that open nothing: {missing}")
 
+    def test_forgiving_folding_keeps_the_keys_distinct(self):
+        """decode.js forgives c/k, y/u and ph/f. It must not merge two words.
+
+        A collision would mean one card's vocabulary silently opening on another
+        card's word, which is not wrong exactly, but it is not what the run says
+        it is doing.
+        """
+        def js_fold(text):
+            t = self.fold(text)
+            for old, new in (("ph", "f"), ("ch", "kh"), ("c", "k"), ("y", "u")):
+                t = t.replace(old, new)
+            return t
+
+        seen = {}
+        for key in sorted(self.keys):
+            folded = js_fold(key)
+            self.assertNotIn(folded, seen, f"{key} and {seen.get(folded)} both fold to {folded}")
+            seen[folded] = key
+
     def test_no_key_without_a_word_behind_it(self):
         """A key nobody can earn is a cheat code, which is a different game."""
         orphans = sorted(self.keys - self.deck_words())
