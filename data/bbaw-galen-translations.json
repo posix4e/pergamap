@@ -1,12 +1,12 @@
 {
   "schema_version": 1,
-  "retrieved_on": "2026-08-12",
+  "retrieved_on": "2026-11-09",
   "source": {
     "publisher": "Berlin-Brandenburg Academy of Sciences and Humanities (BBAW)",
     "title": "Corpus Medicorum Graecorum: Galenus — Übersetzungen",
     "url": "https://cmg.bbaw.de/startseite/arbeitsmittel/werkverzeichnisse/galenus-uebersetzungen/",
     "terms_url": "https://cmg.bbaw.de/startseite/impressum/",
-    "sha256": "59991a040edc3384b95e9db850d0e19433f150f4c3270aff099cb65145b98657"
+    "sha256": "8849dbeda85f9a00ad110835766934607a2124d8637af28f264e7e0476b55315"
   },
   "language_columns": {
     "german": "German",
